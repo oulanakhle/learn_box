@@ -20,7 +20,25 @@ puts "Creating subjects"
 photography = Subject.new(name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
 photography.user = oula
 photography.save
+puts " creating goals"
 outdoor_expert = Goal.new(name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0)
+outdoor_expert.subject = photography
+outdoor_expert.save
+
+puts "creating Task"
+outdoor_first_album = Task.new({name: "Outdoor first album", due_date: "april 1 2019", completed: false, goal_id: 0})
+outdoor_first_album.goal = outdoor_expert
+outdoor_first_album.save
+
+puts "creating Link"
+youtube_url = Link.new(url: "https://www.youtube.com/watch?v=w3DKdiBkRDM")
+youtube_url.goal = outdoor_expert
+youtube_url.save
+
+
+
+
+
 # puts "Creating Goals"
 # demo_goals = [{name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0}, {goal: "Indoor Expert", goal_difficulty: 9, completed: true,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]}, {goal: "Fish Lens Expert", goal_difficulty: 10, completed: false,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]} ]
 

@@ -1,30 +1,33 @@
 
 #needs to be done in this order since booking holds foreign keys
+puts "Destroy Users"
+User.destroy_all
+
 puts "Destroy subjects"
 Subject.destroy_all
 
 puts "Destroy goals"
 Goal.destroy_all
 
-puts "Destroy Users"
-User.destroy_all
-
 puts "Destroy tasks"
 Task.destroy_all
+oula = User.create(email: "oulanakhle@gmail.com", password: "123456")
+ram = User.create(email: "ramnakhle@gmail.com", password: "123456")
 
-puts "Destroy links"
-Link.destroy_all
+
 
 puts "Creating subjects"
-demo_subject = {user_id: 0, name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0}
+photography = Subject.new(name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
+photography.user = oula
+photography.save
+outdoor_expert = Goal.new(name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0)
+# puts "Creating Goals"
+# demo_goals = [{name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0}, {goal: "Indoor Expert", goal_difficulty: 9, completed: true,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]}, {goal: "Fish Lens Expert", goal_difficulty: 10, completed: false,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]} ]
 
-puts "Creating Goals"
-demo_goals = [{name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0}, {goal: "Indoor Expert", goal_difficulty: 9, completed: true,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]}, {goal: "Fish Lens Expert", goal_difficulty: 10, completed: false,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]} ]
-
-puts "Creating Tasks"
-demo_tasks = [{name: "Outdoor first album", due_date: "april 1 2019", completed: false, goal_id: 0},{name: "Outdoor second", dute_date: "april 1 2019", completed: false, goal_id: 0}, {name: "Outdoor third album", dute_date: "april 1 2019", completed: false, goal_id: 0}]
-puts "Creating links"
-demo_link = {goal_id: 0, url: "https://www.youtube.com/watch?v=w3DKdiBkRDM"}
+# puts "Creating Tasks"
+# demo_tasks = [{name: "Outdoor first album", due_date: "april 1 2019", completed: false, goal_id: 0},{name: "Outdoor second", dute_date: "april 1 2019", completed: false, goal_id: 0}, {name: "Outdoor third album", dute_date: "april 1 2019", completed: false, goal_id: 0}]
+# puts "Creating links"
+# demo_link = {goal_id: 0, url: "https://www.youtube.com/watch?v=w3DKdiBkRDM"}
 
 # ENTREPRENEURS = [
 #   ["Jeff Bezos", "https://static3.businessinsider.de/image/59f3391fe92e2c39555cb9ac-1210/drew%20angerer-getty%20images.jpg"],

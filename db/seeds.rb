@@ -1,4 +1,3 @@
-
 #needs to be done in this order since booking holds foreign keys
 puts "Destrying Links"
 Link.destroy_all
@@ -14,7 +13,6 @@ Subject.destroy_all
 
 puts "Destroying Users"
 User.destroy_all
-
 
 oula = User.create(email: "oulanakhle@gmail.com", password: "123456")
 ram = User.create(email: "ramnakhle@gmail.com", password: "123456")

@@ -20,6 +20,7 @@ puts "Creating subjects"
 photography = Subject.new(name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
 photography.user = oula
 photography.save
+
 puts " creating goals"
 outdoor_expert = Goal.new(name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0)
 outdoor_expert.subject = photography
@@ -67,34 +68,33 @@ youtube_url.save
 #   ["Hillary Clinton", "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE4MDAzNDEwMDU4NTc3NDIy/hillary-clinton-9251306-2-402.jpg"]
 # ]
 
+minecraft = Subject.new(name: "minecraft",subject_difficulty: 1, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
+minecraft.user = ram
+minecraft.save
+puts " creating goals"
+outdoor_expert = Goal.new(name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0)
+outdoor_expert.subject = photography
+outdoor_expert.save
 
+indoor_expert = Goal.new(name: "indoor Expert", goal_difficulty: 10, completed: false,subject_id: 0)
+indoor_expert.subject = photography
+indoor_expert.save
 
-# 5.times do
-#   e = User.create(email: Faker::Internet.email, password: "123456")
-#   puts "Created #{e.email}"
-#   #name?? --> TODO: add later
-# end
+puts "creating Task"
+outdoor_first_album = Task.new({name: "Outdoor first album", due_date: "april 1 2019", completed: false, goal_id: 0})
+outdoor_first_album.goal = outdoor_expert
+outdoor_first_album.save
 
-# a = User.create(email: "a@b.com", password: "123456")
-# puts "Created #{a.email}"
+indoor_first_album = Task.new({name: "indoor first album", due_date: "april 1 2019", completed: false, goal_id: 0})
+indoor_first_album.goal = indoor_expert
+indoor_first_album.save
 
-# puts "Creating Dinners"
+puts "creating Link"
+youtube_url_outdoor = Link.new(url: "https://www.youtube.com/watch?v=w3DKdiBkRDM")
+youtube_url_outdoor.goal = outdoor_expert
+youtube_url_outdoor.save
 
-# url = "https://gist.githubusercontent.com/b1nary/ea8fff806095bcedacce/raw/6e6de20d7514b93dd69b149289264997b49459dd/enterpreneur-quotes.json"
-# motto = JSON.parse(open(url).read)
+youtube_url_indoor = Link.new(url: "https://www.youtube.com/watch?v=MRhvg2hvGhU")
+youtube_url_indoor.goal = outdoor_expert
+youtube_url_indoor.save
 
-# url2 = "https://listsdesign.herokuapp.com/lists/address-es_ES.json"
-# address = JSON.parse(open(url2).read)
-
-# (0..16).to_a.each_with_index do |element, index|
-#   title = ENTREPRENEURS[index][0]
-#   image = ENTREPRENEURS[index][1]
-#   topic = motto[element]["text"]
-#   location = address["Addresses (Spain)"][element]["data"]
-#   type = Faker::Coffee.blend_name
-#   i = Dinner.create(title: title, location: location, price: rand(10..250), meal_type: type, capacity: rand(1..15), topic: topic, user: User.last, image: image)
-#   puts "Hosting a dinner with #{i.title} about #{i.topic} in #{i.location} with #{i.image}"
-# end
-
-# #one dinner
-# # i = Dinner.create(title: "ecommerce", location: "gracia", price: rand(10..10000), meal_type: "italian", capacity: rand(1..15), topic: "woah topic", user: User.last)

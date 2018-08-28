@@ -1,22 +1,23 @@
 
 #needs to be done in this order since booking holds foreign keys
+puts "Destroy Users"
+User.destroy_all
+
 puts "Destroy subjects"
 Subject.destroy_all
 
 puts "Destroy goals"
 Goal.destroy_all
 
-puts "Destroy Users"
-User.destroy_all
-
 puts "Destroy tasks"
 Task.destroy_all
+oula = User.create(email: "oulanakhle@gmail.com", password: "123456")
+ram = User.create(email: "ramnakhle@gmail.com", password: "123456")\
 
-puts "Destroy links"
-Link.destroy_all
+
 
 puts "Creating subjects"
-demo_subject = {user_id: 0, name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0}
+photography = Subject.new(name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
 
 puts "Creating Goals"
 demo_goals = [{name: "Outdoor Expert", goal_difficulty: 10, completed: false,subject_id: 0}, {goal: "Indoor Expert", goal_difficulty: 9, completed: true,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]}, {goal: "Fish Lens Expert", goal_difficulty: 10, completed: false,subject_id: 0, links: ["https://www.youtube.com/watch?v=w3DKdiBkRDM","https://www.youtube.com/watch?v=V9w5E9I5bW4", "https://www.youtube.com/watch?v=0uhG0HvjXGw"]} ]

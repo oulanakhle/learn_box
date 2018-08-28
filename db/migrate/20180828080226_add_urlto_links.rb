@@ -3,5 +3,3 @@ class AddUrltoLinks < ActiveRecord::Migration[5.2]
     add_column :links, :url, :string
   end
 end
-
-#testing

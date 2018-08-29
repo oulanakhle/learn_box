@@ -2,35 +2,23 @@
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: center;
   text-align: center;
   color: white;
-  height: 40vh;
-
+  width: 100%;
 }
 
 .bar{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width:90vh;
-    top: 16%;
-    color: white;
+  position: absolute top;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: white;
 }
 
-.bar h1 {
-  font: montserrat;
-  font-size: 40px;
-  font-weight: regular;
-  text-align:center;
-}
 .bar p {
   font: montserrat;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: lighter;
-  text-align: center;
 }
 
 .h5__top {
@@ -42,28 +30,15 @@
   font: montserrat;
 }
 
-.holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-lg {
+.btn-md {
   border-color: #211c2b;
-  margin: 0 auto;
   border-radius: 25px;
   background: transparent;
-}
-
-.btn-lg:hover {
-  background: #211c2b;
-  opacity: 1;
+  margin: 0 auto;
 }
 
 .bar a {
   color: white;
+
 }
 
-.bar a:hover {
-  color: white;
-}

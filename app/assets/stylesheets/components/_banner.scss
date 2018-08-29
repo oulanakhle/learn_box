@@ -1,3 +1,4 @@
+
 .banner {
   background-size: cover !important;
   display: flex;
@@ -6,7 +7,6 @@
   text-align: center;
   color: white;
   height: 30vh;
-
 }
 
 .bar{
@@ -20,13 +20,13 @@
     color: white;
 }
 
-.bar h1 {
+.banner h1 {
   font: montserrat;
   font-size: 70px;
   font-weight: regular;
   text-align:center;
 }
-.bar p {
+.banner p {
   font: montserrat;
   font-size: 20px;
   font-weight: lighter;
@@ -40,10 +40,4 @@
   color: white;
   font-size: 25px;
   font: montserrat;
-}
-
-.holder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

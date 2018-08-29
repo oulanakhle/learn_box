@@ -7,7 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "How it works", root_path(anchor: "howto"), class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Join a course",root_path(anchor: "host"), class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Sign-up for free",root_path(anchor: "host"), class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
@@ -31,7 +31,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_up", default: "Sign-up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Sign-up for free"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>

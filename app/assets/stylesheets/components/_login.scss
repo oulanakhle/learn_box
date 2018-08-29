@@ -8,7 +8,7 @@
   }
 }
 .login-top {
-  background-color: #6e6e6e ;
+  background-color: #211c2b;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
@@ -18,8 +18,12 @@
   }
 }
 
-.login-white {
+.login-box {
   background-color: white;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
 }
 
 
@@ -54,6 +58,6 @@
   z-index: -1;
 }
 .underlay-black {
-  background: rgba(33,28,43,0.7);
+  background: rgba(255,255,255,0.7);
   z-index: -1;
 }

@@ -15,8 +15,10 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <div class = "pages-container"><%= yield %></div>
+    <div class = "pages-container">
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
     <hr>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>

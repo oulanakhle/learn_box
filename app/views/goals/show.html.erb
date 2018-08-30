@@ -1,1 +1,23 @@
-<p>1234</p>
+<div id="red_bar"></div>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-xs12 col-md-12 col-lg-12">
+      <h1 id="goal_small_text">Goal</h1>
+    </div>
+  </div>
+  <div class="row">
+    <h4 class="goal-show"><%= @goal.name %></h4>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="row">
+    <% @goals.each_with_index do |goal, index| %>
+        <div class="task-card">
+          <div class="task-card-taskname">fake task title
+          </div>
+        </div>
+        <%end%>
+      </div>
+  </div>
+
+

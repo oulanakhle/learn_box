@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
   def index
     #@subject = Subject.find(params[:id]) wrong because is trying to display all goals but subjects are linked to specific id
     @goals = Goal.all
+    #should I go through all the tasks & calc --> total time, deadline?
   end
 
   def show

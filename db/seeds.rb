@@ -27,15 +27,15 @@ minecraft.user = ram
 minecraft.save
 
 puts "Creating goals"
-insta = Goal.new(name: "Get instagram famous", goal_difficulty: 10, completed: false,subject_id: 0)
+insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 0)
 insta.subject = photography
 insta.save
 
-leika = Goal.new(name: "Master a leika", goal_difficulty: 10, completed: false,subject_id: 1)
+leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 1)
 leika.subject = photography
 leika.save
 
-miner = Goal.new(name: "Become a 3D artist", goal_difficulty: 10, completed: false,subject_id: 1)
+miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 1)
 miner.subject = minecraft
 miner.save
 
@@ -48,7 +48,7 @@ b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: 
 b = leika
 b.save
 
-c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5goal_id: 2})
+c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2})
 c.goal = miner
 c.save
 

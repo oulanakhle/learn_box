@@ -1,18 +1,22 @@
 <div class="container">
   <p class="text-center text-orange"> <strong>Dashboard</strong></p>
-
-  <div class="goals-index__card">
-    <div class="subject_button">
-      Subject.name
+  <% @goals.each do |goal| %>
+    <div class="goals-index-card">
+      <div class="goals-index-card__subject">
+        <p><strong>Capitalize(Subject.name)</strong></p>
+      </div>
+      <div class = "goals-index-card__time">
+        Calc task.totaltime? <br>
+        <strong>Task.deadline TBD DB or calc</strong>
+      </div>
+      <div class = "goals-index-card__title">
+        <h4><%= goal.name %></h4>
+      </div>
+      <div class = "goals-index-card__description">
+        <%= goal.description %>
+      </div>
     </div>
-    <div class = "subject_time">
-      Subject.time
-    </div>
-    <div class = "subject_deadline">
-      Subject.deadline
-    </div>
-    <p> Subject.description </p>
-  </div>
+  <% end %>
 
   <div class="goals-index__card">
     <p>nesting</p>

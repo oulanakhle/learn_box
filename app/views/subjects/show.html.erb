@@ -1,0 +1,39 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+      <p>resources</p>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <div class="col-xs-12 col-md4 col-lg-3">
+        <%= params[:description] %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md4 col-lg-3">
+      <p>goals</p>
+      <% Goal.all.each_with_index do |goal, index| %>
+      <ul>
+        <li>
+          <%= Goal.all[index].name %>
+          <div class="row">
+            <p>tasks</p>
+            <div class="col-xs-12 col-md4 col-lg-3">
+              <% Task.all.each_with_index do |task, index| %>
+              <ul>
+                <li>
+                  <%= Task.all[index].name%>
+                </li>
+              </ul>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+

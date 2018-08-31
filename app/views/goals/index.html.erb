@@ -32,7 +32,13 @@
         <div class = "goals-index-card__time">
           <%= calculate_time(goal) %>
           <br>
-          <strong><%=  first_deadline(goal)%></strong>
+          <% if first_deadline(goal).nil? %>
+            <p>no deadline</p>
+          <% else %>
+            <strong>
+              <%=first_deadline(goal).strftime("%B %d")%>
+            </strong>
+          <% end %>
         </div>
         <div class = "goals-index-card__title">
           <h4><%= goal.name %></h4>

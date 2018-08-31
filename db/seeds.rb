@@ -53,11 +53,11 @@ a = Task.new({name: "Find good instagram models", due_date: "april 1 2019", comp
 a.goal = insta
 a.save
 
-b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1, deadline: DateTime.now})
+b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1, deadline: DateTime.new(2018,9,7)})
 b = leika
 b.save
 
-c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2, deadline: DateTime.now})
+c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2, deadline: DateTime.new(2018,9,30)})
 c.goal = miner
 c.save
 

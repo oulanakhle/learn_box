@@ -11,7 +11,7 @@ module ApplicationHelper
   def first_deadline(goal)
     deadlines = []
     goal.tasks.each do |task|
-      deadlines << task.deadline
+        deadlines << task.deadline
     end
     return deadlines.sort[0]
   end

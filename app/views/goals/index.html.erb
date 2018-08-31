@@ -1,29 +1,26 @@
 <div class="container">
   <p class="text-center text-orange"> <strong>Dashboard</strong></p>
   <% @goals.each do |goal| %>
-    <div class="goals-index-card">
-      <div class="goals-index-card__subject">
-        <p><strong>Capitalize(Subject.name)</strong></p>
+    <% if goal.goal_difficulty >= 7 %>
+      <div class="goals-index-card card__border-red">
+    <% elsif goal.goal_difficulty >= 4 && goal.goal_difficulty < 7 %>
+      <div class="goals-index-card card__border-yellow">
+    <% else %>
+      <div class="goals-index-card card__border-green">
+    <% end %>
+        <div class="goals-index-card__subject">
+          <p><strong>Capitalize(Subject.name)</strong></p>
+        </div>
+        <div class = "goals-index-card__time">
+          Calc task.totaltime? <br>
+          <strong>Task.deadline TBD DB or calc</strong>
+        </div>
+        <div class = "goals-index-card__title">
+          <h4><%= goal.name %></h4>
+        </div>
+        <div class = "goals-index-card__description">
+          <%= goal.description %>
+        </div>
       </div>
-      <div class = "goals-index-card__time">
-        Calc task.totaltime? <br>
-        <strong>Task.deadline TBD DB or calc</strong>
-      </div>
-      <div class = "goals-index-card__title">
-        <h4><%= goal.name %></h4>
-      </div>
-      <div class = "goals-index-card__description">
-        <%= goal.description %>
-      </div>
-    </div>
   <% end %>
-
-  <div class="goals-index__card">
-    <p>nesting</p>
-  </div>
-
-  <div class="goals-index__card">
-    <p> besting</p>
-  </div>
-
 </div>

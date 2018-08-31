@@ -31,11 +31,11 @@ insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of ha
 insta.subject = photography
 insta.save
 
-leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 1)
+leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", goal_difficulty: 6, completed: false,subject_id: 1)
 leika.subject = photography
 leika.save
 
-miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 1)
+miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", goal_difficulty: 1, completed: false,subject_id: 1)
 miner.subject = minecraft
 miner.save
 

@@ -7,8 +7,9 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-    @task = Task.new
+    @tasks = Task.all
     @goals = Goal.all
+
   end
 
   def new
@@ -18,7 +19,7 @@ class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
     @goal.user = current_user
-    if @dinner.save
+    if @dgoal.save
       redirect_to goal_path(@goal)
     else
       render 'new'
@@ -28,7 +29,7 @@ class GoalsController < ApplicationController
 
   private
 
-  def dinner_params
+  def goal_params
     params.require(:goal).permit(:name, :goal_difficulty, :completed)
   end
 

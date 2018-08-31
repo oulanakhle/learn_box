@@ -2,13 +2,12 @@ class GoalsController < ApplicationController
   def index
     #@subject = Subject.find(params[:id]) wrong because is trying to display all goals but subjects are linked to specific id
     @goals = Goal.all
-
+    @subject = Subject.all
     @tasktime = 0
-
-    raise
-    Goal.find(params[:id])
-      Goal.tasks.each do |task|
-      end
+    #raise
+    #Goal.find(params[:id])
+    #  Goal.tasks.each do |task|
+    #  end
 
 
     #should I go through all the tasks & calc --> total time, deadline?
@@ -26,8 +25,11 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
-    @goal.user = current_user
-    if @dinner.save
+    #@goal.user = current_user
+    @subject = Subject.find(params[:goal][:subject_id])
+    @goal.subject = @subject
+    if @goal.save
+      raise
       redirect_to goal_path(@goal)
     else
       render 'new'
@@ -37,7 +39,7 @@ class GoalsController < ApplicationController
 
   private
 
-  def dinner_params
+  def goal_params
     params.require(:goal).permit(:name, :difficulty, :completed)
   end
 

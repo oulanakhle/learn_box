@@ -13,12 +13,15 @@
           </ul>
         </div>
       <% end %>
-      <%= f.input :name %>
-      <%= f.input :difficulty %>
-      <%= f.input :description %>
-      <%= f.input :datetime, as: :string, required: false, input_html: {class: "datepicker"}%>
+      <%= f.input :name, placeholder: "What do you want to achieve?" %>
+      <%#= f.input :subject, placeholder: "What subject it belongs to?"%>
+      <%= f.association :subject, collection: Subject.all, promt: "What subject does it belong to?" %>
+      <%= f.input :difficulty, collection: 1..10 %>
+      <%= f.input :description, placeholder: "Add a description to the goal" %>
 
-      <%= f.submit "host a dinner", class: "btn btn-danger" %>
+      <div class="text-center">
+        <%= f.submit "Done", class: "btn btn-primary" %>
+      </div>
       <!-- [...] all the fields -->
     <% end %>
 

@@ -9,10 +9,11 @@
       <div class="goals-index-card card__border-green">
     <% end %>
         <div class="goals-index-card__subject">
-          <p><strong>Capitalize(Subject.name)</strong></p>
+          <p><strong><%= goal.subject.name.upcase %></strong></p>
         </div>
         <div class = "goals-index-card__time">
-          Calc task.totaltime? <br>
+          <%= calculate_time(goal) %>
+          <br>
           <strong>Task.deadline TBD DB or calc</strong>
         </div>
         <div class = "goals-index-card__title">

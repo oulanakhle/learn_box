@@ -1,32 +1,29 @@
 .ctn-login {
-  margin-top: 200px;
   min-height: 100vh;
+  background-color: white;
 
   .form-control {
     margin-top: 5px;
     margin-bottom: 20px;
   }
 }
+
 .login-top {
-  background-color: #211c2b;
+  margin-top: 50px;
   padding-top: 5px;
   padding-bottom: 5px;
-  text-align: center;
-  h2 {
+  h3 {
     margin: 0px;
-    color: white;
+    color: #f7a500;
+    font-size: 32px;
   }
 }
 
 .login-box {
-  background-color: white;
   padding-top: 20px;
-  padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
 }
-
-
 
 .login-username, .login-password {
   background: transparent;

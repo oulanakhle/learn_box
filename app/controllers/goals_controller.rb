@@ -38,7 +38,7 @@ class GoalsController < ApplicationController
   private
 
   def dinner_params
-    params.require(:goal).permit(:name, :goal_difficulty, :completed)
+    params.require(:goal).permit(:name, :difficulty, :completed)
   end
 
 end

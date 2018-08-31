@@ -1,9 +1,9 @@
 <div class="container">
   <p class="text-center text-orange"> <strong>Dashboard</strong></p>
   <% @goals.each do |goal| %>
-    <% if goal.goal_difficulty >= 7 %>
+    <% if goal.difficulty >= 7 %>
       <div class="goals-index-card card__border-red">
-    <% elsif goal.goal_difficulty >= 4 && goal.goal_difficulty < 7 %>
+    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
       <div class="goals-index-card card__border-yellow">
     <% else %>
       <div class="goals-index-card card__border-green">

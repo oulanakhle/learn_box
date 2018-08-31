@@ -35,15 +35,15 @@ minecraft.user = ab
 minecraft.save
 
 puts "Creating goals"
-insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of hard work over here", goal_difficulty: 10,subject_id: 0)
+insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of hard work over here", difficulty: 10,subject_id: 0)
 insta.subject = photography
 insta.save
 
-leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", goal_difficulty: 6,subject_id: 1)
+leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", difficulty: 6,subject_id: 1)
 leika.subject = photography
 leika.save
 
-miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", goal_difficulty: 1, subject_id: 1)
+miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", difficulty: 1, subject_id: 1)
 miner.subject = minecraft
 miner.save
 

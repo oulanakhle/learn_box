@@ -1,31 +1,22 @@
 <div class="goal-show__red-bar"></div>
 <div class="container mt-3">
-  <div class="goal-show__row">
-    <div class="col-xs12 col-md-12 col-lg-12">
-      <h1 class="goal-show__small-text">Goal</h1>
-    </div>
-  </div>
-  <div class="goal-show__row">
-    <h4 class="goal-show__h4"><%= @goal.name %></h4>
-  </div>
-</div>
-<div class="container mt-3">
+  <h1 class="goal-show__small-text">Goal</h1>
+  <h4 class="goal-show__h4"><%= @goal.name %></h4>
   <div class="row">
     <% @tasks.each_with_index do |task, index| %>
-        <% if index.odd?  %>
-        <div class="task-card-odd">
-          <div class="task-card-taskname"> <%= task.name %>
-          </div>
+      <% if index.odd?  %>
+      <div class="task-card-odd">
+        <div class="task-card-taskname"> <%= task.name %>
         </div>
-        <% else  %>
-        <div class="task-card-even">
-          <div class="task-card-taskname"> <%= task.name %>
-          </div>
+      </div>
+      <% else  %>
+      <div class="task-card-even">
+        <div class="task-card-taskname"> <%= task.name %>
         </div>
-        <% end %>
-        <% end %>
       </div>
-        <%= link_to "ADD TASK", root_path, class: "btn homepage-btn bolder" %>
-      </div>
+      <% end %>
+    <% end %>
   </div>
+        <%= link_to "Add task", new_goal_task_path(@goal), class: "top-margin btn-primary goal-add__dashboard-btn" %>
+</div>
 

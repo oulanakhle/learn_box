@@ -42,7 +42,7 @@ minecraft.save
 puts "Creating goals"
 
 dota2 = Goal.new(name: "Hero selection", description: "Hero selection is crucial to learning dota 2", difficulty: 10,subject_id: 0)
-dota2.subject = gaming
+dota2subject = gaming
 dota2.save
 
 insta = Goal.new(name: "Master analog focus", description: "In order to make the best use of the increased resolution, effective and rapid autofocus (AF) must accompany the increase in pixels.", difficulty: 10,subject_id: 0)

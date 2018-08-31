@@ -1,3 +1,4 @@
+
 #needs to be done in this order since booking holds foreign keys
 require 'open-uri'
 require 'faker'
@@ -35,28 +36,28 @@ minecraft.user = ab
 minecraft.save
 
 puts "Creating goals"
-insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of hard work over here", goal_difficulty: 10, completed: false,subject_id: 0)
+insta = Goal.new(name: "Get instagram famous", description: "gotta do lots of hard work over here", difficulty: 10,subject_id: 0)
 insta.subject = photography
 insta.save
 
-leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", goal_difficulty: 6, completed: false,subject_id: 1)
+leika = Goal.new(name: "Master a leika", description: "gotta do lots of hard work over here", difficulty: 6,subject_id: 1)
 leika.subject = photography
 leika.save
 
-miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", goal_difficulty: 1, completed: false,subject_id: 1)
+miner = Goal.new(name: "Become a 3D artist", description: "gotta do lots of hard work over here", difficulty: 1, subject_id: 1)
 miner.subject = minecraft
 miner.save
 
 puts "Creating Tasks"
-a = Task.new({name: "Find good instagram models", due_date: "april 1 2019", completed: false, hours: 50, goal_id: 0})
+a = Task.new({name: "Find good instagram models", due_date: "april 1 2019", completed: false, hours: 50, goal_id: 0, deadline: DateTime.new(2018,9,15)})
 a.goal = insta
 a.save
 
-b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1})
+b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1, deadline: DateTime.now})
 b = leika
 b.save
 
-c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2})
+c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2, deadline: DateTime.now})
 c.goal = miner
 c.save
 

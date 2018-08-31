@@ -1,0 +1,33 @@
+<div class="task-new__red-bar"></div>
+<div class="container">
+  <div class="task-new__row">
+    <div class="col-xs12 col-md-12 col-lg-12">
+      <h1 class="task-new__small-text">Goals/<%= @goal.name %></h1>
+    </div>
+  </div>
+  <div class="task-new__row">
+    <div class="col-xs12 col-md-12 col-lg-12">
+      <h1 class="task-new__big-text">Create your task</h1>
+    </div>
+  </div>
+  <%= simple_form_for([@goal, @task ]) do |f| %>
+    <% if @task.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :name,  class:"task-new__form-name",
+    :placeholder => "Name your task"  %>
+    <%= f.input :due_date, class:"task-new__form-date" %>
+    <%= f.input :hours, class:"task-new__form-hours",
+    :placeholder => "how long will this take?" %>
+    <%= f.submit "create a task", class: "task-new__btn" %>
+    <!-- [...] all the fields -->
+  <% end %>
+<hr>
+</div>
+

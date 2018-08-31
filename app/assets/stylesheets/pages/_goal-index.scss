@@ -6,10 +6,50 @@
 
 }
 
-.goals-index__card {
+.goals-index-card {
   min-height: 100px;
   background-color: white;
-  border-left: 10px solid #F1383C;
-  margin-right: 10px;
-  padding-left: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__border-red {
+  border-left: 10px solid #EB5A46;
+}
+
+.card__border-yellow {
+  border-left: 10px solid #F7A500;
+}
+
+.card__border-green {
+  border-left: 10px solid #61BD4F;
+}
+
+.goals-index-card__subject {
+  border: 1px solid grey;
+  border-radius: 20px;
+  font-size: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+
+.goals-index-card__time{
+  margin-left: auto;
+  margin-top: -8px;
+  font-size: 14px;
+  font-family: Montserrat;
+}
+
+.goals-index-card__title {
+  width: 100%;
+}
+
+
+.goals-index-card__description {
+  font-family: Montserrat;
 }

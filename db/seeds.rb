@@ -1,4 +1,7 @@
 #needs to be done in this order since booking holds foreign keys
+require 'open-uri'
+require 'faker'
+
 puts "Destrying Links"
 Link.destroy_all
 
@@ -14,8 +17,13 @@ Subject.destroy_all
 puts "Destroying Users"
 User.destroy_all
 
+ab = User.create(email: "a@b.com", password: "123456")
 oula = User.create(email: "oulanakhle@gmail.com", password: "123456")
-ram = User.create(email: "ramnakhle@gmail.com", password: "123456")
+5.times do
+  e = User.create(email: Faker::Internet.email, password: "123456")
+  puts "Created #{e.email}"
+  #name?? --> TODO: add later
+end
 
 puts "Creating Subjects"
 photography = Subject.new(name: "Photography",subject_difficulty: 7, review_frequency: 3, subject_progress: 0, private: false, rating: 0)

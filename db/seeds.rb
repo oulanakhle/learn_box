@@ -31,7 +31,7 @@ photography.user = oula
 photography.save
 
 minecraft = Subject.new(name: "Minecraft",subject_difficulty: 1, review_frequency: 3, subject_progress: 0, private: false, rating: 0)
-minecraft.user = ram
+minecraft.user = ab
 minecraft.save
 
 puts "Creating goals"

@@ -1,5 +1,5 @@
 <div class="container">
-  <p class="text-center text-orange"> <strong>Dashboard</strong></p>
+  <p class="text-center text-orange"> <strong>Some suggested Goals</strong></p>
   <% @goals.each do |goal| %>
     <% if goal.difficulty >= 7 %>
       <div class="goals-index-card card__border-red">
@@ -14,7 +14,7 @@
         <div class = "goals-index-card__time">
           <%= calculate_time(goal) %>
           <br>
-          <strong>Task.deadline TBD DB or calc</strong>
+          <strong><%=  first_deadline(goal)%></strong>
         </div>
         <div class = "goals-index-card__title">
           <h4><%= goal.name %></h4>

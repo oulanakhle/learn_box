@@ -1,3 +1,4 @@
+
 #needs to be done in this order since booking holds foreign keys
 require 'open-uri'
 require 'faker'
@@ -48,15 +49,15 @@ miner.subject = minecraft
 miner.save
 
 puts "Creating Tasks"
-a = Task.new({name: "Find good instagram models", due_date: "april 1 2019", completed: false, hours: 50, goal_id: 0})
+a = Task.new({name: "Find good instagram models", due_date: "april 1 2019", completed: false, hours: 50, goal_id: 0, deadline: DateTime.new(2018,9,15)})
 a.goal = insta
 a.save
 
-b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1})
+b = Task.new({name: "Outdoor first album", due_date: "april 1 2018", completed: false, hours: 10, goal_id: 1, deadline: DateTime.now})
 b = leika
 b.save
 
-c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2})
+c = Task.new({name: "indoor first album", due_date: "april 1 2020", completed: false, hours: 5, goal_id: 2, deadline: DateTime.now})
 c.goal = miner
 c.save
 

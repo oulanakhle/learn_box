@@ -15,7 +15,17 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+
 }
+
+.goals-container {
+   a:hover, a:visited, a:link, a:active
+  {
+    color: #000000;
+  }
+}
+
+
 
 .card__border-red {
   border-left: 10px solid #EB5A46;

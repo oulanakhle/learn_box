@@ -10,15 +10,21 @@
   </div>
 </div>
 
-<div class="container top-margin">
+<div class="container goals-container top-margin">
   <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
   <% @goals.each do |goal| %>
+
+    <%= link_to goal_path(goal) do %>
+
     <% if goal.difficulty >= 7 %>
       <div class="goals-index-card card__border-red">
+
     <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
       <div class="goals-index-card card__border-yellow">
+
     <% else %>
       <div class="goals-index-card card__border-green">
+
     <% end %>
         <div class="goals-index-card__subject">
           <p><strong><%= goal.subject.name.upcase %></strong></p>
@@ -35,6 +41,7 @@
           <%= goal.description %>
         </div>
       </div>
+    <% end %>
   <% end %>
 </div>
 

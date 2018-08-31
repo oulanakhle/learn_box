@@ -1,19 +1,20 @@
 <div class="container">
-  <p class="text-center text-orange"> <strong>Dashboard</strong></p>
+  <p class="text-center text-orange"> <strong>Some suggested Goals</strong></p>
   <% @goals.each do |goal| %>
-    <% if goal.goal_difficulty >= 7 %>
+    <% if goal.difficulty >= 7 %>
       <div class="goals-index-card card__border-red">
-    <% elsif goal.goal_difficulty >= 4 && goal.goal_difficulty < 7 %>
+    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
       <div class="goals-index-card card__border-yellow">
     <% else %>
       <div class="goals-index-card card__border-green">
     <% end %>
         <div class="goals-index-card__subject">
-          <p><strong>Capitalize(Subject.name)</strong></p>
+          <p><strong><%= goal.subject.name.upcase %></strong></p>
         </div>
         <div class = "goals-index-card__time">
-          Calc task.totaltime? <br>
-          <strong>Task.deadline TBD DB or calc</strong>
+          <%= calculate_time(goal) %>
+          <br>
+          <strong><%=  first_deadline(goal)%></strong>
         </div>
         <div class = "goals-index-card__title">
           <h4><%= goal.name %></h4>

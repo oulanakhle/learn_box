@@ -1,5 +1,17 @@
 <div class="container">
-  <p class="text-center text-orange"> <strong>Some suggested Goals</strong></p>
+  <h6 class="pages-dashboard__small-text"> Dashboard </h6>
+  <div class="row">
+    <div class="card">
+      <h3 class="pages-dashboard__bigger-text">Create a goal to get started 👇</h3>
+    </div>
+  </div>
+  <div class="text-center top-margin">
+    <%= link_to "+ Add goal", new_goal_path, class: "btn-primary goal-add__dashboard-btn" %>
+  </div>
+</div>
+
+<div class="container top-margin">
+  <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
   <% @goals.each do |goal| %>
     <% if goal.difficulty >= 7 %>
       <div class="goals-index-card card__border-red">
@@ -25,3 +37,4 @@
       </div>
   <% end %>
 </div>
+

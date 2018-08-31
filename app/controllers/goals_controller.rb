@@ -15,8 +15,9 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-    @task = Task.new
+    @tasks = Task.all
     @goals = Goal.all
+
   end
 
   def new
@@ -29,7 +30,6 @@ class GoalsController < ApplicationController
     @subject = Subject.find(params[:goal][:subject_id])
     @goal.subject = @subject
     if @goal.save
-      raise
       redirect_to goal_path(@goal)
     else
       render 'new'

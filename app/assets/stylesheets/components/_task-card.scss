@@ -1,17 +1,32 @@
-.task-card {
+.task-card-even {
 background-color: #FFFFFF;
 height: 138px;
 width: 343px;
 margin-bottom: 8px;
 margin-left: 70px;
+box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+
 
 }
+.task-card-odd {
+background-color: #FFFFFF;
+height: 138px;
+width: 343px;
+margin-bottom: 8px;
+margin-right: 70px;
+box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+
+
+}
+
 
 .task-card-taskname {
   flex: 50%;
   text-align: right;
   padding-top: 27px;
-  margin-right: 47px;
+  margin-right: 37px;
   font-size: 24px;
   font-weight: 1000;
 }
+
+

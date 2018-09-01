@@ -4,5 +4,6 @@ class User < ApplicationRecord
   has_many :subjects
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable #:confirmable --> requires new views
+         # :trackable --> requires current_sign_in_a method
 end

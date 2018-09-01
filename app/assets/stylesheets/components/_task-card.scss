@@ -1,4 +1,6 @@
 .task-card-even {
+display: flex;
+flex-direction: column;
 background-color: #FFFFFF;
 height: 138px;
 width: 343px;
@@ -9,6 +11,8 @@ box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 
 }
 .task-card-odd {
+display: flex;
+flex-direction: column;;
 background-color: #FFFFFF;
 height: 138px;
 width: 343px;
@@ -21,12 +25,43 @@ box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 
 
 .task-card-taskname {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
   flex: 50%;
   text-align: right;
-  padding-top: 27px;
-  margin-right: 37px;
+  margin-right: 10px;
+  margin-left: 25px;
   font-size: 24px;
   font-weight: 1000;
+
+
 }
 
 
+#check-box {
+  display: flex;
+  color: green;
+  padding-top: 8px;
+  font-size: 18px;
+  // margin-right: 5px;
+}
+
+#pen{
+  color: gray;
+  font-size: 18px;
+  margin-left: 10px;
+
+}
+
+.task-card-description
+{ display: flex;
+  align-self: center;
+  font-size: 16px;
+
+}
+
+.pulldown {
+  display: flex;
+  align-self: center;
+}

@@ -18,8 +18,8 @@ Subject.destroy_all
 puts "Destroying Users"
 User.destroy_all
 
-ab = User.create(email: "a@b.com", password: "123456")
-oula = User.create(email: "oulanakhle@gmail.com", password: "123456")
+ab = User.create(name: "anon", email: "a@b.com", password: "123456")
+oula = User.create(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
 5.times do
   e = User.create(email: Faker::Internet.email, password: "123456")
   puts "Created #{e.email}"

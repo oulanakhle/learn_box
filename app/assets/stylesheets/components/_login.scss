@@ -1,11 +1,7 @@
 .ctn-login {
   min-height: 100vh;
   background-color: white;
-
-  .form-control {
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
+  margin-bottom: -45px;
 }
 
 .login-top {
@@ -16,6 +12,7 @@
     margin: 0px;
     color: #f7a500;
     font-size: 32px;
+    font-weight: bold;
   }
 }
 

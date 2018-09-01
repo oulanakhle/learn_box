@@ -6,12 +6,32 @@
     <% @tasks.each_with_index do |task, index| %>
       <% if index.odd?  %>
       <div class="task-card-odd">
-        <div class="task-card-taskname"> <%= task.name %>
+        <div class="task-card-taskname">
+          <div>
+            <i class="far fa-check-circle" id="check-box" >
+              <i class="fas fa-pencil-alt" id="pen"></i>
+            </i>
+          </div>
+            <div> <%= task.name %></div>
+        </div>
+        <div class="task-card-description">Description will be like thi...</div>
+        <div class="pulldown">
+        <i class="fas fa-caret-down"></i>
         </div>
       </div>
       <% else  %>
       <div class="task-card-even">
-        <div class="task-card-taskname"> <%= task.name %>
+        <div class="task-card-taskname">
+          <div>
+            <i class="far fa-check-circle" id="check-box" >
+              <i class="fas fa-pencil-alt" id="pen"></i>
+            </i>
+          </div>
+            <div> <%= task.name %></div>
+        </div>
+        <div class="task-card-description">Description will be like thi...</div>
+        <div class="pulldown">
+        <i class="fas fa-caret-down"></i>
         </div>
       </div>
       <% end %>

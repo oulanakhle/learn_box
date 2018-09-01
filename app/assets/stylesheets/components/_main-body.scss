@@ -26,6 +26,10 @@ p {
   color: #1C008B;
 }
 
+.text-white {
+  color: white;
+}
+
 .top-margin {
   margin-top: 30px !important;
 }
@@ -67,7 +71,7 @@ p {
 
 .lg-padding {
   padding-top: 100px !important;
-  padding-bottom: 100px !important;
+  margin-bottom: 100px !important;
 }
 
 .bg-white {

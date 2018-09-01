@@ -1,5 +1,5 @@
 body {
-     a:hover, a:visited, a:link, a:active
+  a:hover, a:visited, a:link, a:active
   {
     text-decoration: none;
   }
@@ -28,4 +28,64 @@ p {
 
 .top-margin {
   margin-top: 30px !important;
+}
+
+.xs-margin {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.sm-margin {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+.md-margin {
+  margin-top: 70px !important;
+  margin-bottom: 70px !important;
+}
+
+.lg-margin {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+}
+
+.xs-padding {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.sm-padding {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.md-padding {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
+.lg-padding {
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-grey {
+  background-color: #D0D0D0;
+}
+
+.bg-darkgrey {
+  background-color: #d1d1d1;
+}
+
+.bg-orange {
+  background-color: #F7A500;
+}
+
+.bg-blue {
+  background-color: #1C008B;
 }

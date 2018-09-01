@@ -3,7 +3,7 @@
   <h1 class="goal-show__small-text">Goal</h1>
   <h4 class="goal-show__h4"><%= @goal.name %></h4>
   <div class="row">
-    <% @tasks.each_with_index do |task, index| %>
+    <% @goal.tasks.each_with_index do |task, index| %>
       <% if index.odd?  %>
       <div class="task-card-odd">
         <div class="task-card-taskname"> <%= task.name %>

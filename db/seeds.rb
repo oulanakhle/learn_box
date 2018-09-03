@@ -2,6 +2,7 @@
 #needs to be done in this order since booking holds foreign keys
 require 'open-uri'
 require 'faker'
+require 'pry'
 
 puts "Destrying Links"
 Link.destroy_all

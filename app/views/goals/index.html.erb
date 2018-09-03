@@ -13,7 +13,7 @@
 <div class="container goals-container top-margin">
   <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
   <% @goals.each do |goal| %>
-
+    <%= render "copy_new", new_goal: @new_goal, goal: goal %>
     <%= link_to goal_path(goal) do %>
 
     <% if goal.difficulty >= 7 %>
@@ -26,26 +26,24 @@
       <div class="goals-index-card card__border-green">
 
     <% end %>
+        <div class = "goals-index-card__title">
+          <h4><%= goal.name %></h4>
+        </div>
         <div class="goals-index-card__subject">
           <p><strong><%= goal.subject.name.upcase %></strong></p>
         </div>
         <div class = "goals-index-card__time">
-          <%= calculate_time(goal) %>
+          <p>Average completion: <%#= calculate_time(goal) %> Hours</p>
           <br>
-          <% if first_deadline(goal).nil? %>
-            <p>no deadline</p>
-          <% else %>
-            <strong>
-              <%=first_deadline(goal).strftime("%B %d")%>
-            </strong>
-          <% end %>
+          <%# if first_deadline(goal).nil? %>
+            <!-- <p>no deadline</p> -->
+          <%# else %>
+            <%#=first_deadline(goal).strftime("%B %d")%>
+          <%# end %>
         </div>
-        <div class = "goals-index-card__title">
-          <h4><%= goal.name %></h4>
-        </div>
-        <div class = "goals-index-card__description">
+        <!-- <div class = "goals-index-card__description">
           <%= goal.description %>
-        </div>
+        </div> -->
       </div>
     <% end %>
   <% end %>

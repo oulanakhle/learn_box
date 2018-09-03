@@ -1,13 +1,49 @@
 <div class="container">
-  <h6 class="pages-dashboard__small-text">Dashboard</h6>
+  <h6 class="pages-dashboard__small-text"> Dashboard </h6>
   <div class="row">
     <div class="card">
       <h3 class="pages-dashboard__bigger-text">Create a goal to get started 👇</h3>
     </div>
   </div>
-
-  <div class="Add a Goal">
-    <%= link_to "+ Add goal", new_goal_path, class: "goal-new__dashboard-btn" %>
+  <div class="text-center top-margin">
+    <%= link_to "+ Add goal", new_goal_path, class: "btn-primary goal-add__dashboard-btn" %>
   </div>
+</div>
 
+<div class="container goals-container top-margin">
+  <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
+  <% @my_goals.each do |goal| %>
+    <%= link_to goal_path(goal) do %>
+
+    <% if goal.difficulty >= 7 %>
+      <div class="goals-index-card card__border-red">
+
+    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
+      <div class="goals-index-card card__border-yellow">
+
+    <% else %>
+      <div class="goals-index-card card__border-green">
+
+    <% end %>
+        <div class = "goals-index-card__title">
+          <h4><%= goal.name %></h4>
+        </div>
+        <div class="goals-index-card__subject">
+          <p><strong><%= goal.subject.name.upcase %></strong></p>
+        </div>
+        <div class = "goals-index-card__time">
+          <p>Average completion: <%= calculate_time(goal) %> Hours</p>
+          <br>
+          <%# if first_deadline(goal).nil? %>
+            <!-- <p>no deadline</p> -->
+          <%# else %>
+            <%#=first_deadline(goal).strftime("%B %d")%>
+          <%# end %>
+        </div>
+        <!-- <div class = "goals-index-card__description">
+          <%= goal.description %>
+        </div> -->
+      </div>
+    <% end %>
+  <% end %>
 </div>

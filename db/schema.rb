@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_01_103620) do
+ActiveRecord::Schema.define(version: 2018_09_03_111247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,11 @@ ActiveRecord::Schema.define(version: 2018_09_01_103620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
+    t.integer "progress", default: 0
+    t.integer "votes", default: 0
+    t.bigint "user_id"
     t.index ["subject_id"], name: "index_goals_on_subject_id"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "links", force: :cascade do |t|
@@ -31,32 +35,28 @@ ActiveRecord::Schema.define(version: 2018_09_01_103620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "url"
+    t.string "name"
+    t.string "description", default: ""
     t.index ["goal_id"], name: "index_links_on_goal_id"
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name"
-    t.string "subject_difficulty"
-    t.integer "review_frequency"
-    t.integer "subject_progress"
-    t.boolean "private"
-    t.integer "rating"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_subjects_on_user_id"
+    t.string "icon", default: ""
   end
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.date "due_date"
     t.boolean "completed"
     t.bigint "goal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "hours"
-    t.datetime "deadline"
+    t.integer "weekday", default: 0
+    t.integer "challenge_week", default: 0
     t.index ["goal_id"], name: "index_tasks_on_goal_id"
   end
 
@@ -75,6 +75,5 @@ ActiveRecord::Schema.define(version: 2018_09_01_103620) do
 
   add_foreign_key "goals", "subjects"
   add_foreign_key "links", "goals"
-  add_foreign_key "subjects", "users"
   add_foreign_key "tasks", "goals"
 end

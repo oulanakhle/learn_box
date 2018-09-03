@@ -4,6 +4,6 @@ class Goal < ApplicationRecord
   has_many :links
   has_many :tasks
 
-  accepts_nested_attributes_for :tasks
+  #accepts_nested_attributes_for :tasks
 end
 

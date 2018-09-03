@@ -18,6 +18,7 @@ gem 'webpacker'
 
 gem 'devise'
 gem 'faker'
+gem 'bourbon', "~> 4.3.4"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

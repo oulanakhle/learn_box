@@ -1,2 +1,73 @@
 <%= render 'shared/home-banner' %>
 
+<div class="sm-padding bg-white">
+  <div class="container " id="howto">
+    <h1 class="">It’s simple.</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="">
+            <h3 class="">Set a goal</h3>
+            <h5 class="">Or select if from our most popular list.</h5>
+            <p class="">There is a difference between <strong>having</strong> and <strong>achieving</strong> a goal. We are here to help.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="">
+            <h3 class="">Pledge amount</h3>
+            <h5 class="card--">We will create a "commitment contract.</h5>
+            <p class="">It is a binding agreement you sign with yourself to ensure fulfill your intentions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <div class="">
+            <h3 class="">Start Learning</h3>
+            <h5 class="card--">Log in to report your achivements.</h5>
+            <p class="">We will track your progress and help you out if you get stuck.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e41af172b07cceb6ccc1c785e5463e3f&auto=format&fit=crop&w=1350&q=80'); height: 30vh;">
+</div>
+
+<div class="sm-padding bg-blue">
+  <div class="container text-white" id="host">
+    <h1 class="">Why does this work?</h1>
+    <p>Learnbox combines quantified self, commitment contracts and habit forming mechanisms. The combination of setting a routine, tracking the data and setting a financial desincentive for not delivering on your promises is a powerful way of leveraging sunk-costs to achive our goals. </p>
+    <h4 class="xs-padding"><strong>Need additional resources? Watch this:</strong></h4>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UNP03fDSj1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="banner" style="background-image: url('https://images.unsplash.com/photo-1526891993611-eca1e7d7b582?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b4949bbed7ab249b09d51d2ebea2dd87&auto=format&fit=crop&w=1350&q=80'); height: 30vh;">
+</div>
+<div class="sm-padding bg-white ">
+  <div class="container ">
+    <h1> Pricing </h1>
+    <p> Fulfil your dreams or lose your pledge. It's a win-win.</p>
+    <%= render 'shared/pricing' %>
+  </div>
+</div>
+
+<div class="sm-padding bg-orange text-white">
+  <div class="container ">
+    <h1> Climb your mountains. </h1>
+    <p> What can you achieve in 30 days?</p>
+  </div>
+  <div class="container ">
+    <%= render 'shared/carrousel' %>
+    <% if current_user %>
+        <%= link_to "Start your goal", goals_path, class: "btn homepage-btn bolder" %>
+      <% else %>
+        <%= link_to "Start your goal", new_user_registration_path, class: "btn homepage-btn bolder" %>
+      <% end %>
+  </div>
+</div>

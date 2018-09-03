@@ -14,7 +14,11 @@
           </div>
             <div> <%= task.name %></div>
         </div>
+        <% if !task.completed %>
         <div class="task-card-description">Description will be like thi...</div>
+        <% else %>
+        <div class="task-card-description-completed">Description will be like thi...</div>
+        <% end %>
         <div class="pulldown">
         <i class="fas fa-caret-down"></i>
         </div>
@@ -29,7 +33,11 @@
           </div>
             <div> <%= task.name %></div>
         </div>
+        <% if !task.completed %>
         <div class="task-card-description">Description will be like thi...</div>
+        <% else %>
+        <div class="task-card-description-completed">Description will be like thi...</div>
+        <% end %>
         <div class="pulldown">
         <i class="fas fa-caret-down"></i>
         </div>

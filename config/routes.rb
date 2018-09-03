@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :tasks, only: [:create,:new,:show,:index]
   end
 
+  post 'create_from_copy', to: 'goals#create_from_copy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

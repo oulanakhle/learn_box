@@ -1,0 +1,13 @@
+<%= simple_form_for(new_goal, url: create_from_copy_path) do |f| %>
+  <%= f.input :name, input_html: {value: goal.name} %>
+  <%= f.input :subject, input_html: {value: goal.subject.id} %>
+  <%= f.input :difficulty, input_html: {value: goal.difficulty} %>
+  <%= f.input :description, input_html: {value: goal.description} %>
+
+  <% id_tasks = [] %>
+  <% goal.tasks.each do |task| %>
+    <% id_tasks << task.id %>
+  <% end %>
+  <%= f.input :tasks, input_html: {value: id_tasks} %>
+  <%= f.submit "Done", class: "btn btn-primary" %>
+<% end %>

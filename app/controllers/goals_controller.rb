@@ -4,6 +4,8 @@ class GoalsController < ApplicationController
     @goals = Goal.all
     @subject = Subject.all
     @tasktime = 0
+    @new_goal = Goal.new
+    #@new_goal.tasks.build
     #raise
     #Goal.find(params[:id])
     #  Goal.tasks.each do |task|
@@ -26,14 +28,41 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.new(goal_params)
-    #@goal.user = current_user
+    @goal.user = current_user
     @subject = Subject.find(params[:goal][:subject_id])
     @goal.subject = @subject
+
     if @goal.save
-      redirect_to goal_path(@goal)
+      redirect_to dashboard_path()
     else
       render 'new'
       # do
+    end
+  end
+
+
+  def create_from_copy
+    @goal = Goal.new(goal_params)
+    @goal.user = current_user
+    @subject = Subject.find(params[:goal][:subject])
+    @goal.subject = @subject
+
+    if @goal.save
+      redirect_to dashboard_path()
+    else
+      render 'new'
+      # do
+    end
+
+    #TODO with nested attributes
+    params[:goal][:tasks].split(" ").each do |task_id|
+      task = Task.find(task_id)
+      new_task = Task.new
+      new_task.name = task.name
+      new_task.hours = task.hours
+      new_task.completed = false
+      new_task.goal = @goal
+      new_task.save
     end
   end
 

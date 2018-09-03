@@ -1,21 +1,23 @@
 class TasksController < ApplicationController
 
+  def new
+    @task = Task.new
+    @goal = Goal.find(params[:goal_id])
+  end
+
   def create
     @task = Task.new(task_params)
     @goal = Goal.find(params[:goal_id])
-
+    @task.goal = @goal
     if @task.save
-      redirect_to goal_task_path(@goal, @task)
+      redirect_to goal_path(@goal)
     else
       render 'new'
       # do
     end
   end
 
-  def new
-    @task = Task.new
-    @goal = Goal.find(params[:goal_id])
-  end
+
 
 private
 

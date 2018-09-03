@@ -100,8 +100,8 @@ end
 ab = User.create(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"
-10.times do
-  name = CATEGORIES[rand(0..9)][0]
+CATEGORIES.each do |element|
+  name = element[0]
   b = Subject.create(name: name)
   puts "Created Category #{b.name}"
 end
@@ -109,7 +109,7 @@ end
 puts "Creating goals"
 65.times do
   name = GOALS[rand(0..65)]
-  c = Goal.create(name: name, description: "", difficulty: rand(1..10), subject: Subject.last, user: User.last,  progress: rand(0..50), votes: rand(0..200))
+  c = Goal.create(name: name, description: "", difficulty: rand(1..10), subject: Subject.all[rand(0...Subject.all.length)], user: User.last,  progress: rand(0..50), votes: rand(0..200))
   puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
   puts
 

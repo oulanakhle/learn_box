@@ -26,6 +26,9 @@
       <div class="goals-index-card card__border-green">
 
     <% end %>
+        <div class = "goals-index-card__title">
+          <h4><%= goal.name %></h4>
+        </div>
         <div class="goals-index-card__subject">
           <p><strong><%= goal.subject.name.upcase %></strong></p>
         </div>
@@ -38,12 +41,9 @@
             <%#=first_deadline(goal).strftime("%B %d")%>
           <%# end %>
         </div>
-        <div class = "goals-index-card__title">
-          <h4><%= goal.name %></h4>
-        </div>
-        <div class = "goals-index-card__description">
+        <!-- <div class = "goals-index-card__description">
           <%= goal.description %>
-        </div>
+        </div> -->
       </div>
     <% end %>
   <% end %>

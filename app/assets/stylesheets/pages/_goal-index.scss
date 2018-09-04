@@ -1,3 +1,9 @@
+.goals-container {
+  a:hover, a:visited, a:link, a:active {
+    color: #000000;
+  }
+}
+
 .goals-index-card {
   min-height: 30px;
   background-color: #edeef7;
@@ -44,16 +50,6 @@
   font-size: 14px;
   font-family: Montserrat;
 }
-
-
-
-.goals-container {
-   a:hover, a:visited, a:link, a:active
-  {
-    color: #000000;
-  }
-}
-
 
 
 .card__border-red {

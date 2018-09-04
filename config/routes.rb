@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   # get 'goals/:goal_id/task/edit'
   resources :subjects, only: [:index, :show]
-  resources :goals, only: [:index, :show, :new, :create, :destroy,] do
-    resources :tasks, only: [:create,:new,:show,:index]
+  resources :goals, only: [:index, :show, :new, :create, :edit, :update, :destroy,] do
+    resources :tasks, only: [:create,:new,:show, :edit, :update, :index, :destroy]
   end
 
   post 'create_from_copy', to: 'goals#create_from_copy'

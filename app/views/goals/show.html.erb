@@ -4,6 +4,10 @@
   <h4 class="goal-show__h4"><%= @goal.name %></h4>
   <div class="row">
     <% @goal.tasks.each_with_index do |task, index| %>
+      <p>
+        <%= link_to "edit", edit_goal_task_path(@goal, task)  %>
+        <%= link_to "delete", goal_task_path(@goal, task), method: "delete"  %>
+      </p>
       <% if index.odd?  %>
       <div class="task-card-odd">
         <div class="task-card-taskname">
@@ -12,7 +16,7 @@
               <i class="fas fa-pencil-alt" id="pen"></i>
             </i>
           </div>
-            <div> <%= task.name %></div>
+          <div> <%= task.name %></div>
         </div>
         <% if !task.completed %>
         <div class="task-card-description">Description will be like thi...</div>

@@ -4,6 +4,8 @@
   <div class="goals-container">
     <% if current_user.goals.any? %>
       <% current_user.goals.each do |goal| %>
+        <%= link_to "edit", edit_goal_path(goal)  %>
+        <%= link_to "delete", goal_path(goal), method: "delete"  %>
         <%= link_to goal_path(goal) do %>
 
         <% if goal.difficulty >= 7 %>

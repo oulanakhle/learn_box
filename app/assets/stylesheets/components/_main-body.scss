@@ -1,104 +1,70 @@
-body {
-  a:hover, a:visited, a:link, a:active
-  {
-    text-decoration: none;
-  }
-}
-
-h1,h2,h3,h4,h5 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-p {
-  font-family: 'Open Sans', sans-serif;
-}
-
 .pages-container {
-  margin-top: 45px;
-  margin-bottom: 35px;
-  background-color: #FFFFFF;
-}
-
-.text-orange {
-  color: #F7A500;
-}
-
-.text-blue {
-  color: #1C008B;
-}
-
-.text-white {
-  color: white;
-}
-
-.text-grey {
-  color: #d1d1d1;
-}
-
-.text-black {
-  color: #000000;
-}
-
-.top-margin {
-  margin-top: 30px !important;
-}
-
-.xs-margin {
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-}
-
-.sm-margin {
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
-}
-
-.md-margin {
-  margin-top: 70px !important;
-  margin-bottom: 70px !important;
-}
-
-.lg-margin {
-  margin-top: 100px !important;
-  margin-bottom: 100px !important;
-}
-
-.xs-padding {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
-}
-
-.sm-padding {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-}
-
-.md-padding {
-  padding-top: 70px !important;
-  padding-bottom: 70px !important;
-}
-
-.lg-padding {
-  padding-top: 100px !important;
-  margin-bottom: 100px !important;
-}
-
-.bg-white {
   background-color: white;
 }
 
-.bg-grey {
-  background-color: #D0D0D0;
+.features-card-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 10%;
 }
 
-.bg-darkgrey {
-  background-color: #d1d1d1;
+.features-card{
+  position: relative;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  width: 30%;
+  height: 65rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
+  font-family: Lato;
+}
+.features-card-image{
+  max-width: 250px;
+  max-height: 250px;
+  width: 250px;
+  height: 250px;
+  border-bottom: 1px solid #bebebe;
 }
 
-.bg-orange {
-  background-color: #F7A500;
+
+.features-card-content{
+  display:flex;
+  flex-direction: column;
+}
+.features-card:nth-last-child(1){
+  margin-right: 0px;
 }
 
-.bg-blue {
-  background-color: #1C008B;
+.features__text-l {
+  margin-bottom: 2em;
+  font-size: 3.5rem;
+  position: absolute;
+  top: 30rem;
+  left: 6rem;
+  right: 6rem;
+  font-weight: bold;
+}
+
+.features__text-m{
+  margin-bottom: 2em;
+  font-size: 2.5rem;
+  position: absolute;
+  left: 6rem;
+  right: 6rem;
+  top: 37rem;
+}
+
+.features__text-s{
+  font-size: 2rem;
+  position: absolute;
+  top: 47rem;
+  left: 6rem;
+  right: 6rem;
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 799.9 799.9" style="enable-background:new 0 0 799.9 799.9;" xml:space="preserve">
+<style type="text/css">
+  .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFF0C2;}
+  .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#84B4FE;}
+  .st2{fill-rule:evenodd;clip-rule:evenodd;fill:#C1DDF7;}
+  .st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+  .st4{fill-rule:evenodd;clip-rule:evenodd;fill:#1F5A9A;}
+  .st5{fill-rule:evenodd;clip-rule:evenodd;fill:#214A81;}
+  .st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFD474;}
+  .st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);}
+</style>
+<g id="Background">
+</g>
+<g id="Objects">
+  <g>
+    <circle class="st0" cx="420.6" cy="400.1" r="217.3"/>
+
+      <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -159.7255 414.6088)" class="st1" cx="420.6" cy="400.1" rx="207.1" ry="207.1"/>
+
+      <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -159.7253 414.6087)" class="st0" cx="420.6" cy="400.1" rx="166.1" ry="166.1"/>
+
+      <ellipse transform="matrix(0.9727 -0.232 0.232 0.9727 -81.3368 108.4775)" class="st1" cx="420.6" cy="400.1" rx="134.4" ry="134.4"/>
+
+      <ellipse transform="matrix(0.7071 -0.7071 0.7071 0.7071 -159.7255 414.6084)" class="st0" cx="420.6" cy="400.1" rx="108.7" ry="108.7"/>
+    <path class="st2" d="M420.6,458.6c32.2,0,58.5-26.3,58.5-58.5c0-32.2-26.3-58.5-58.5-58.5c-32.2,0-58.5,26.3-58.5,58.5
+      C362.1,432.3,388.4,458.6,420.6,458.6z"/>
+    <g>
+      <path class="st3" d="M389,348l31.6,51.9l-45.3-40.5C369.1,354,384.6,340.6,389,348z"/>
+      <path class="st4" d="M384.7,324.5l-193-199.8L352.9,351C374.7,381.5,412.2,352.7,384.7,324.5z"/>
+      <g>
+        <path class="st5" d="M191.6,124.7l195.6,235.1c8.7-6.9,11.3-21.2-2.5-35.3L191.6,124.7z"/>
+      </g>
+      <path class="st0" d="M237.7,180.1c4.9-14.4,13.7-56.4,0.1-74.1c-13.6-17.8-40.1-14.6-46.2,18.8L237.7,180.1z"/>
+      <path class="st6" d="M237.7,180.1c-15,2.2-53.3-1.7-68.2-18.3c-15-16.6-7.6-37.1,22.1-37.1L237.7,180.1z"/>
+    </g>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="172.6506" y1="674.0851" x2="453.1182" y2="438.7449">
+      <stop  offset="0.3818" style="stop-color:#000000;stop-opacity:0"/>
+      <stop  offset="1" style="stop-color:#000000;stop-opacity:0.4"/>
+    </linearGradient>
+    <path class="st7" d="M384.7,475.4L239.5,625.7c4.8,17.7,10.4,52.6-1.6,68.3c-13.6,17.8-40.1,14.6-46.2-18.8
+      c-29.7,0-37.2-20.5-22.1-37.1c13.2-14.6,44.5-19.4,62-18.8l121.4-170.3c8.1-11.4,18.5-14.5,26.8-12.5l40.9-36.5l-28.2,46.4
+      C396.2,454,395.1,464.7,384.7,475.4z"/>
+  </g>
+</g>
+</svg>

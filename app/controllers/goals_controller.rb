@@ -42,27 +42,19 @@ class GoalsController < ApplicationController
 
 
   def create_from_copy
-    @goal = Goal.new(goal_params)
-    @goal.user = current_user
-    @subject = Subject.find(params[:goal][:subject])
-    @goal.subject = @subject
+    admin_goal = Goal.find(params[:id])
+    @goal= admin_goal.dup
 
     if @goal.save
+      admin_goal.tasks.each do |task|
+        new_task = task.dup
+        new_task.goal = @goal
+        new_task.save
+      end
       redirect_to dashboard_path()
     else
       render 'new'
       # do
-    end
-
-    #TODO with nested attributes
-    params[:goal][:tasks].split(" ").each do |task_id|
-      task = Task.find(task_id)
-      new_task = Task.new
-      new_task.name = task.name
-      new_task.hours = task.hours
-      new_task.completed = false
-      new_task.goal = @goal
-      new_task.save
     end
   end
 

@@ -13,7 +13,8 @@
 <div class="container goals-container top-margin">
   <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
   <% @goals.each do |goal| %>
-    <%= render "copy_new", new_goal: @new_goal, goal: goal %>
+    <%= link_to "import", create_from_copy_path(id: goal.id), method: "post", class: "btn btn-warning" %>
+    <%#= render "copy_new", new_goal: @new_goal, goal: goal %>
     <%= link_to goal_path(goal) do %>
 
     <% if goal.difficulty >= 7 %>

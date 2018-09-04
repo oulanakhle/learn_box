@@ -36,8 +36,8 @@
 
 .goals-index-card__time{
   margin-left: auto;
-  margin-top: -8px;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
   font-family: Montserrat;
 }
 
@@ -47,7 +47,9 @@
 }
 
 
-.goals-index-card__description {
+.goals-index-card__import {
+  margin-left: auto;
+  font-size: 14px;
   font-family: Montserrat;
 }
 

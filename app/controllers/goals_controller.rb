@@ -1,16 +1,9 @@
 class GoalsController < ApplicationController
   def index
-    #@subject = Subject.find(params[:id]) wrong because is trying to display all goals but subjects are linked to specific id
     @goals = Goal.all
     @subject = Subject.all
     @tasktime = 0
     @new_goal = Goal.new
-    #@new_goal.tasks.build
-    #raise
-    #Goal.find(params[:id])
-    #  Goal.tasks.each do |task|
-    #  end
-
 
     #should I go through all the tasks & calc --> total time, deadline?
   end
@@ -33,7 +26,7 @@ class GoalsController < ApplicationController
     @goal.subject = @subject
 
     if @goal.save
-      redirect_to dashboard_path()
+      redirect_to goals_path()
     else
       render 'new'
       # do
@@ -42,27 +35,22 @@ class GoalsController < ApplicationController
 
 
   def create_from_copy
-    @goal = Goal.new(goal_params)
-    @goal.user = current_user
-    @subject = Subject.find(params[:goal][:subject])
-    @goal.subject = @subject
+    admin_goal = Goal.find(params[:id])
+    @my_goal= admin_goal.dup
+    @my_goal.votes = 0
+    @my_goal.user = current_user
 
-    if @goal.save
-      redirect_to dashboard_path()
+    if @my_goal.save
+      admin_goal.tasks.each do |task|
+        new_task = task.dup
+        new_task.goal = @my_goal
+        new_task.save
+      end
+      redirect_to goals_path()
+
     else
       render 'new'
       # do
-    end
-
-    #TODO with nested attributes
-    params[:goal][:tasks].split(" ").each do |task_id|
-      task = Task.find(task_id)
-      new_task = Task.new
-      new_task.name = task.name
-      new_task.hours = task.hours
-      new_task.completed = false
-      new_task.goal = @goal
-      new_task.save
     end
   end
 

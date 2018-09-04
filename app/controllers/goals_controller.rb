@@ -33,6 +33,21 @@ class GoalsController < ApplicationController
     end
   end
 
+  def edit
+    @goal = Goal.find(params[:id])
+  end
+
+  def update
+    @goal = Goal.find(params[:id])
+    @goal.update(goal_params)
+    redirect_to goals_path(@goal)
+  end
+
+  def destroy
+    @goal = Goal.find(params[:id])
+    @goal.destroy()
+    redirect_to goals_path()
+  end
 
   def create_from_copy
     admin_goal = Goal.find(params[:id])

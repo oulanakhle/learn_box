@@ -7,7 +7,7 @@
     </div>
     <div class="task-new__row">
       <div class="col-xs12 col-md-12 col-lg-12">
-        <h1 class="task-new__big-text">Create your task</h1>
+        <h1 class="task-new__big-text">Edit your task</h1>
       </div>
     </div>
     <div class="task-new__form">
@@ -26,11 +26,10 @@
         <%= f.input :hours, class:"task-new__form-hours",
         :placeholder => "How long do you think this will this take?" %>
         <div class="text-center">
-        <%= f.submit "Create a task", class: "btn btn-primary" %>
+        <%= f.submit "Update", class: "btn btn-primary" %>
         </div>
         <!-- [...] all the fields -->
       <% end %>
     <hr>
   </div>
 </div>
-

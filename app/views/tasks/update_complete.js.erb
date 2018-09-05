@@ -2,9 +2,15 @@ console.log("testing")
 // tenim la task id
 
 <% if @message %>
-  const taskId = <%= @task.id%>;
+  taskId = "taskId" + <%= @task_id%>;
   // selection amb task id
-  const task = document.getElementById(taskId);
+  console.log("00000000000000")
+  console.log(taskId)
+  if ( typeof task === "undefined") {
+    task = document.querySelector(`#${taskId}`);
+  } else {
+    task = document.querySelector(`#${taskId}`);
+  }
   // change class
   task.classList.toggle("active");
 

@@ -12,13 +12,13 @@
   </div>
    <div class="task-card__row">
       <% @goal.tasks.each_with_index do |task, index| %>
-
-        <%= link_to "complete", update_complete_path(task_id: task.id), method: "post", id: "taskId#{task.id}", remote: true %>
-         <div class="task-card  <%= !task.completed ? 'active' : '' %>">
+         <div class="task-card  <%= task.completed ? 'active' : '' %>" id="taskId<%= task.id %>">
           <div class="task-card-left">
             <!--  -->
-                <%= image_tag "check.svg", class:'task-card-check' %>
-                <%= image_tag "check-white.svg", class:'task-card-check-white' %>
+                <%= link_to update_complete_path(task), method: "post", remote: true do %>
+                  <%= image_tag "check.svg", class:'task-card-check' %>
+                  <%= image_tag "check-white.svg", class:'task-card-check-white' %>
+                <% end %>
                 <%= link_to image_tag("edit.svg"), edit_goal_task_path(@goal, task), class:"task-card-edit"  %>
                 <%= link_to image_tag("edit-white.svg"), edit_goal_task_path(@goal, task), class:"task-card-edit-white"  %>
                 <h2 class="task-card-taskname"><%= task.name %>

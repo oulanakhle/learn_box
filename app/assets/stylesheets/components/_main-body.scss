@@ -14,6 +14,8 @@ body {
 .pages-container {
   margin-top: 45px;
   background-color: white;
+  position: relative;
+
 }
 
 .features-card-container{
@@ -149,4 +151,18 @@ body {
 .lg-padding {
   padding-top: 100px !important;
   margin-bottom: 100px !important;
+}
+/////// bg image
+
+.bg-main{
+    /* The image used */
+    /* Full height */
+    transform: scale(1.48);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 500px;
+    justify-content: flex-start;
+    opacity: 0.6;
+
 }

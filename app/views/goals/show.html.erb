@@ -1,56 +1,27 @@
-<div class="goal-show__red-bar"></div>
-<div class="container mt-3">
-  <h1 class="goal-show__small-text">Goal</h1>
-  <h4 class="goal-show__h4"><%= @goal.name %></h4>
-  <div class="row">
-    <% @goal.tasks.each_with_index do |task, index| %>
-      <p>
-        <%= link_to "edit", edit_goal_task_path(@goal, task)  %>
-        <%= link_to "delete", goal_task_path(@goal, task), method: "delete"  %>
-      </p>
-      <% if index.odd?  %>
-      <div class="task-card-odd">
-        <div class="task-card-taskname">
-          <div>
-            <i class="far fa-check-circle" id="check-box" >
-              <i class="fas fa-pencil-alt" id="pen"></i>
-            </i>
+<div class="goal-show__wrapper">
+  <div class="goal-show__top-content">
+    <div class="goal-show__goal-word">
+    Goal
+    </div>
+    <div class="goal-show__goal-title">
+    <%= @goal.name %>
+    </div>
+    <div class="add-task-btn">
+     <%= link_to "Add task", new_goal_task_path(@goal), class: "add-task-btn-2" %>
+    </div>
+  </div>
+   <div class="row">
+      <% @goal.tasks.each_with_index do |task, index| %>
+        <div class="task-card">
+          <div class="task-card-taskname">
+              <%= link_to "edit", edit_goal_task_path(@goal, task)  %>
+              <%= task.name%>
           </div>
-          <div> <%= task.name %></div>
-        </div>
-        <% if !task.completed %>
-        <div class="task-card-description">Description will be like thi...</div>
-        <% else %>
-        <div class="task-card-description-completed">Description will be like thi...</div>
-        <% end %>
-        <div class="pulldown">
-        <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-      <% else  %>
-      <div class="task-card-even">
-        <div class="task-card-taskname">
-          <div>
-            <i class="far fa-check-circle" id="check-box" >
-              <i class="fas fa-pencil-alt" id="pen"></i>
-            </i>
+          <div class="task-card-icons">
+          <%= link_to "delete", goal_task_path(@goal, task), method: "delete"  %>
           </div>
-            <div> <%= task.name %></div>
         </div>
-        <% if !task.completed %>
-        <div class="task-card-description">Description will be like thi...</div>
-        <% else %>
-        <div class="task-card-description-completed">Description will be like thi...</div>
-        <% end %>
-        <div class="pulldown">
-        <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
-<div class="text-center top-margin">
-  <%= link_to "Add task", new_goal_task_path(@goal), class: "top-margin btn-primary goal-add__dashboard-btn" %>
-</div>
-

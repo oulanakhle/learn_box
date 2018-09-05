@@ -2,33 +2,32 @@
 
 <% arr.reverse.each do |goal| %>
   <div class="col-xs-12 col-sm-6">
-    <%= link_to goal_path(goal) %>
     <!-- if I link to do it fucks up the card -->
-    <% if goal.difficulty >= 7 %>
-      <div class="product card__border-red">
+      <% if goal.difficulty >= 7 %>
+        <div class="product card__border-red">
 
-    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
-      <div class="product card__border-yellow">
+      <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
+        <div class="product card__border-yellow">
 
-    <% else %>
-      <div class="product card__border-green">
-    <% end %>
-
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'><%= goal.votes %></div>
-          <div class="product-downvote"></div>
-        </div>
-        <img src="assets/<%= goal.subject.name.downcase %>.svg" alt="<%= goal.subject.name.downcase %>" class="product-image hidden-xs">
-        <div class='product-body'>
-          <h6>Average completion: <%= calculate_time(goal) %> Hours</h6>
-          <h3><%= goal.name %></h3>
-          <p><%= goal.subject.name.upcase %></p>
-        </div>
-        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><%= link_to "import", edit_goal_path(goal), class: "fa fa-star" %></li>
-          <li><%= link_to "", goal_path(goal), method: "delete", class: "far fa-trash-alt" %></li>
-        </ul>
+      <% else %>
+        <div class="product card__border-green">
+      <% end %>
+        <%= link_to goal_path(goal), class: "product-link" do %>
+          <div class='product-upvote'>
+            <div class="product-arrow"></div>
+            <div class='product-count'><%= goal.votes %></div>
+            <div class="product-downvote"></div>
+          </div>
+          <img src="assets/<%= goal.subject.name.downcase %>.svg" alt="<%= goal.subject.name.downcase %>" class="product-image hidden-xs">
+          <div class='product-body'>
+            <h6>Average completion: <%= calculate_time(goal) %> Hours</h6>
+            <h3><%= goal.name %></h3>
+            <p><%= goal.subject.name.upcase %></p>
+          </div>
+        <% end %>
+          <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+            <li><%= link_to "import", create_from_copy_path(id: goal.id), method: "post", class: "far fa-star" %></li>
+          </ul>
       </div>
   </div>
 <% end %>

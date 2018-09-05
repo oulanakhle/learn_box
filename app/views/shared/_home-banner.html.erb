@@ -3,9 +3,9 @@
     <h2 class="features__heading"> Learn something new in 30 days</h2>
       <p class="features__text"> ACCELERATE YOUR LEARNING. BET AGAINST YOUR FUTURE SELF.</p>
         <% if current_user %>
-          <%= link_to "Start your goal", goals_path, class: "btn homepage-btn bolder" %>
+          <%= link_to "Start your goal", goals_path, class: "btn btn-homepage bolder" %>
         <% else %>
-          <%= link_to "Start your goal", new_user_registration_path, class: "btn homepage-btn bolder" %>
+          <%= link_to "Start your goal", new_user_registration_path, class: "btn btn-homepage bolder" %>
         <% end %>
   </div>
 </div>

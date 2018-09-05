@@ -1,4 +1,4 @@
-<div class="container bottom-big-margin">
+<div class="container bottom-big-margin";>
   <div class="row">
     <div class ="col-xs-12">
       <h6 class="pages-dashboard__small-text"> My goals</h6>
@@ -20,12 +20,18 @@
           <p>ARTS</p>
         </div>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><a href=""><i class="far fa-edit"></i></a></li>
-          <li><a href=""><i class="far fa-trash-alt"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
           <li><a href=""><i class="fa fa-star"></i></a></li>
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="row">
+    <% if current_user.goals.any? %>
+      <%= render 'shared/goal-card' %>
+    <% end %>
   </div>
 
 

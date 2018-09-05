@@ -36,7 +36,7 @@ class GoalsController < ApplicationController
   def create_from_copy
     admin_goal = Goal.find(params[:id])
     @my_goal= admin_goal.dup
-    @my_goal.votes = 0
+    @my_goal.votes = 1
     @my_goal.user = current_user
 
     if @my_goal.save

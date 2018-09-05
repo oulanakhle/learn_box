@@ -1,0 +1,30 @@
+<% current_user.goals.each do |goal| %>
+  <div class="col-xs-12 col-sm-6">
+    <% if goal.difficulty >= 7 %>
+      <div class="product card__border-red">
+
+    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
+      <div class="product card__border-yellow">
+
+    <% else %>
+      <div class="product card__border-green">
+    <% end %>
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'><%= goal.votes %></div>
+          <div class="product-downvote"></div>
+        </div>
+        <img src="assets/<%= goal.subject.name.downcase %>.svg" alt="<%= goal.subject.name.downcase %>" class="product-image hidden-xs">
+        <div class='product-body'>
+          <h6>Average completion: <%= calculate_time(goal) %> Hours</h6>
+          <h3><%= goal.name %></h3>
+          <p><%= goal.subject.name.upcase %></p>
+        </div>
+        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul>
+      </div>
+  </div>
+<% end %>

@@ -17,8 +17,88 @@
   width: 65%;
 }
 
-.task-card-taskname{
-a{
-  padding-right: 10px;
+.task-card-edit{
+img{
+width: 20px;
+height: 20px;
+margin: 0 15px;
 }
+
+}
+
+.task-card-delete{
+width: 20px;
+height: 20px;
+}
+
+.task-card-check{
+  width: 20px;
+  height: 20px;
+}
+
+ .task-card-completed{
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  background-color: #78cd70;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.3);
+  font-family: Lato;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  background-image: url('wiggle.svg');
+
+
+ }
+
+
+
+.task-card-edit-completed{
+img{
+width: 20px;
+height: 20px;
+margin: 0 15px;
+}
+
+}
+
+.task-card-delete-completed{
+width: 20px;
+height: 20px;
+}
+
+.task-card-check-completed{
+  width: 20px;
+  height: 20px;
+}
+
+.task-card-taskname{
+  font-size: 24px;
+  font-weight: 500;
+}
+.task-card-taskname-completed{
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  // text-shadow: -0.2px 0 black, 0 0.2px black, 0.2px 0 black, 0 -0.2px black;
+
+}
+.task-card-left{
+  display: flex;
+  align-items: flex-end;
+  h2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+}
+
+.task-card-left-completed{
+    display: flex;
+    align-items: flex-end;
+  h2{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+
 }

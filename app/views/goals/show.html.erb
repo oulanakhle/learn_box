@@ -7,21 +7,34 @@
     <%= @goal.name %>
     </div>
     <div class="add-task-btn">
-     <%= link_to "Add task", new_goal_task_path(@goal), class: "add-task-btn-2" %>
+     <%= link_to "Add task", new_goal_task_path(@goal), class: "add-task-btn2" %>
     </div>
   </div>
    <div class="task-card__row">
       <% @goal.tasks.each_with_index do |task, index| %>
+        <% if task.completed %>
         <div class="task-card">
-          <div class="task-card-taskname">
-              <%= link_to "edit", edit_goal_task_path(@goal, task)  %>
-              <%= task.name%>
-          </div>
-          <div class="task-card-icons">
-          <%= link_to "delete", goal_task_path(@goal, task), method: "delete"  %>
-          </div>
+          <div class="task-card-left">
+                <%= image_tag "check.svg", class:'task-card-check' %>
+                <%= link_to image_tag("edit.svg"), edit_goal_task_path(@goal, task), class:"task-card-edit"  %>
+                <h2 class="task-card-taskname"><%= task.name %>
+                </h2>
+             </div>
+             <%= link_to image_tag("delete.svg"), goal_task_path(@goal, task), method: "delete",class:"task-card-delete" %>
         </div>
+          <% else %>
+                <div class="task-card-completed">
+          <div class="task-card-left-completed">
+                <%= image_tag "check-white.svg", class:'task-card-check-completed' %>
+                <%= link_to image_tag("edit-white.svg"), edit_goal_task_path(@goal, task), class:"task-card-edit-completed"  %>
+               <h2 class="task-card-taskname-completed"><%= task.name%> : Task complete!
+               </h2>
+             </div>
+             <%= link_to image_tag("delete-white.svg"), goal_task_path(@goal, task), method: "delete",class:"task-card-delete-completed" %>
+        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
+

@@ -36,6 +36,24 @@ class TasksController < ApplicationController
     redirect_to goal_path(@goal)
   end
 
+  def update_complete
+    task = Task.find(params[:task_id])
+    task.completed = !task.completed
+    @task_id = task.id
+    @goal = task.goal
+
+    if task.save
+      @message = true
+    else
+      @message = task.errors.full_messages
+    end
+
+    respond_to do |format|
+        format.html { redirect_to goal_path(@goal) }
+        format.js
+    end
+  end
+
 
 private
 

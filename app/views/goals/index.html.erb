@@ -1,6 +1,17 @@
 <div class = "bg-grey">
   <div class="container md-margin">
-    <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class=" dashboard__h3 text-center">View you goals and create a new one's 👇</h3>
+      </div>
+      <div class="col-xs-12">
+        <div class=" dashboard__parent-btns text-center xs-margin">
+          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+          <%= link_to "CREATE", new_goal_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+        </div>
+      </div>
+    </div>
+    <h3 class=" dashboard__h3">👩‍💻Browse and import most popular goals👨‍💻</h3>
     <div class="row">
       <%= render 'shared/goal-card' %>
   </div>

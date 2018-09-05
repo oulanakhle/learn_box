@@ -1,0 +1,129 @@
+.product {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  max-height: 100px;
+  margin: 30px;
+}
+
+/* Body design */
+.product-body {
+  flex: 1 1 auto;
+}
+.product-body h6 {
+  font-variant: regular;
+  font-size: 10px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.product-body h3 {
+  font-variant: regular;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.product-body p {
+  font-variant: light;
+  font-size: 14px;
+  color: #84B4FE;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+/* Product image */
+.product-image {
+  background: #f9e675;
+  border-radius: 90%;
+  padding: 0.2em;
+  margin-right: 10px;
+  width: 50px;
+  border: 2px solid #84B4FE;
+}
+
+/* Upvote design */
+.product-upvote {
+  padding-right: 10px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.product-count {
+  margin: 2px 0 0;
+}
+.product-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.product-downvote {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-top: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.product-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.product-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+.product-controls a:hover {
+  color: #FFA617 !important
+}
+.product-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.product:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+.product-upvote:hover, .product-upvote.product-upvote-upvoted {
+  color: #5898f1;
+  cursor: pointer;
+}
+.product-upvote-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+// .product:hover .product-upvote {
+//   transform: scale(1.2)
+// }
+.product:hover .product-controls-hidden a {
+  color: #E6E6E6;
+}
+.product-upvote:hover .product-arrow{
+  border-bottom: 9px solid #5898f1;
+}
+
+.product-upvote:hover .product-downvote{
+  border-top: 9px solid #5898f1;
+}

@@ -19,7 +19,7 @@ puts "Destroying Users"
 User.destroy_all
 
 CATEGORIES = [
-              ["Others"], ["Arts"], ["Health"], ["Fitness"], ["Money"], ["Self-Improvement"], ["Intimacy"], ["Social"], ["Work"], ["Study"]
+              ["others"], ["arts"], ["health"], ["fitness"], ["money"], ["self-improvement"], ["intimacy"], ["Social"], ["Work"], ["Study"]
             ]
 
 GOALS = [

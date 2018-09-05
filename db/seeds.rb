@@ -94,6 +94,7 @@ oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "1234
   #name?? --> TODO: add later
 end
 
+faper = User.create!(name: "faper", email: "addicted@porn.com", password: "123456")
 ab = User.create!(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"
@@ -114,8 +115,8 @@ GOALS.each do |goal|
   puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
   puts
 
-  5.times do
-    todo = Task.create!(name: "Early game heroes", completed: false, hours: rand(1..3), goal: Goal.last)
+  30.times do
+    todo = Task.create!(name: "Do not FAP. Do NOT open Pornhub.", completed: false, hours: rand(1..3), goal: Goal.last)
     puts "Created Task #{todo.name} for #{todo.goal.name} "
   end
 

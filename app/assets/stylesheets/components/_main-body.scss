@@ -1,5 +1,7 @@
 .pages-container {
   background-color: white;
+  position: relative;
+
 }
 
 .features-card-container{
@@ -12,7 +14,6 @@
 }
 
 .features-card{
-  position: relative;
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -24,6 +25,7 @@
   border-radius: 20px;
   box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
   font-family: Lato;
+  min-width: 300px;
 }
 .features-card-image{
   max-width: 250px;
@@ -40,12 +42,14 @@
 }
 .features-card:nth-last-child(1){
   margin-right: 0px;
+  .features__text-s{
+    padding-bottom: 1.3em;
+  }
 }
 
 .features__text-l {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   font-size: 3.5rem;
-  position: absolute;
   top: 30rem;
   left: 6rem;
   right: 6rem;
@@ -53,9 +57,8 @@
 }
 
 .features__text-m{
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
   font-size: 2.5rem;
-  position: absolute;
   left: 6rem;
   right: 6rem;
   top: 39rem;
@@ -63,7 +66,6 @@
 
 .features__text-s{
   font-size: 2rem;
-  position: absolute;
   top: 50rem;
   left: 6rem;
   right: 6rem;
@@ -118,4 +120,18 @@
  .lg-padding {
   padding-top: 100px !important;
   margin-bottom: 100px !important;
+}
+/////// bg image
+
+.bg-main{
+    /* The image used */
+    /* Full height */
+    transform: scale(1.48);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 500px;
+    justify-content: flex-start;
+    opacity: 0.6;
+
 }

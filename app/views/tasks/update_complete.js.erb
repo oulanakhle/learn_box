@@ -1,0 +1,25 @@
+console.log("testing")
+// tenim la task id
+
+<% if @message %>
+  taskId = "taskId" + <%= @task_id%>;
+  // selection amb task id
+  console.log("00000000000000")
+  console.log(taskId)
+  if ( typeof task === "undefined") {
+    task = document.querySelector(`#${taskId}`);
+  } else {
+    task = document.querySelector(`#${taskId}`);
+  }
+  // change class
+  task.classList.toggle("active");
+
+<% else %>
+  let errorMessage = `<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    Task could not be completed. <%= @message %>
+  </div>`
+
+  const pagesContainer = document.querySelector (".pages-container")
+  pagesContainer.insertAdjacentHTML ("afterbegin", errorMessage )
+<% end %>

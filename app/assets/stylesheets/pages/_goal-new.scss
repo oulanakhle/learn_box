@@ -10,3 +10,19 @@
   margin-left: 5px;
   padding: 5px 10px 5px 10px;
 }
+
+.goal-new__box {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 4px 6px 9px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 50%;
+  padding-left: 30px;
+  padding-top: 60px;
+  padding-right: 30px;
+  height: 500px;
+  font-weight: lighter;
+  background-color: #F9F9F9;
+}

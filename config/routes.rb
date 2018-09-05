@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   end
 
   post 'create_from_copy', to: 'goals#create_from_copy'
+
+  post 'update_complete/:task_id', to: 'tasks#update_complete', as: "update_complete"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

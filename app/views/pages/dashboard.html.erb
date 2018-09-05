@@ -1,24 +1,26 @@
-<div class="container  bottom-big-margin";>
-  <div class="row">
-    <div class ="col-xs-12">
-      <h6 class="dashboard__small-text top-margin"> My goals</h6>
-    </div>
-  </div>
-
-  <div class="row">
-    <% if current_user.goals.any? %>
-      <%= render 'shared/my-goal-card' %>
-    <% end %>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class=" dashboard__h3 text-center">Browse or create a new goal 👇</h3>
-    </div>
-    <div class="col-xs-12">
-      <div class=" dashboard__parent-btns text-center xs-margin">
-        <%= link_to "BROWSE", goals_path, class: "btn btn-orange dashboard__btn-side-margin" %>
-        <%= link_to "CREATE", new_goal_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+<div class = "bg-grey">
+  <div class="container bottom-big-margin";>
+    <div class="row">
+      <div class ="col-xs-12">
+        <h6 class="dashboard__small-text top-margin"> My goals</h6>
       </div>
     </div>
+
+    <div class="row">
+      <% if current_user.goals.any? %>
+        <%= render 'shared/my-goal-card' %>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class=" dashboard__h3 text-center">Browse or create a new goal 👇</h3>
+      </div>
+      <div class="col-xs-12">
+        <div class=" dashboard__parent-btns text-center xs-margin">
+          <%= link_to "BROWSE", goals_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+          <%= link_to "CREATE", new_goal_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+        </div>
+      </div>
+  </div>
 </div>

@@ -1,6 +1,9 @@
 <div class="container md-margin">
   <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
-  <% @goals.each do |goal| %>
+  <% arr = @goals.sort_by do |goal| %>
+    <% goal[:votes] %>
+  <% end %>
+  <% arr.each do |goal| %>
     <%= link_to "import", create_from_copy_path(id: goal.id), method: "post", class: "btn   btn-orange" %>
     <div class="goals-container">
       <%= link_to goal_path(goal) do %>

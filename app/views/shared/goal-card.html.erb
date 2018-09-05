@@ -1,4 +1,4 @@
-<% current_user.goals.each do |goal| %>
+<% goals.each do |goal| %>
   <div class="col-xs-12 col-sm-6">
     <%= link_to goal_path(goal) %>
     <!-- if I link to do it fucks up the card -->
@@ -24,7 +24,8 @@
           <p><%= goal.subject.name.upcase %></p>
         </div>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><%= link_to "edit", create_from_copy_path(id: goal.id), method: "post", class: "far fa-edit" %></li>
+          <li><%= link_to "import", edit_goal_path(goal), class: "fa fa-star" %></li>
+          <li><%= link_to "", goal_path(goal), method: "delete", class: "far fa-trash-alt" %></li>
         </ul>
       </div>
   </div>

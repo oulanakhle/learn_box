@@ -1,37 +1,31 @@
 <div class="login__wrapper" style="background-image: url('<%= image_path('Sign-up.png') %>')">
-    <div class="form-container">
-      <div class="task-new__row">
-        <div class="col-xs12 col-md-12 col-lg-12">
-          <h1 class="task-new__small-text">Goals/<%= @goal.name %></h1>
-        </div>
-      </div>
-      <div class="task-new__row">
-        <div class="col-xs12 col-md-12 col-lg-12">
-          <h1 class="task-new__big-text">Create your task</h1>
-        </div>
-      </div>
-      <div class="task-new__box">
-        <%= simple_form_for([@goal, @task ]) do |f| %>
-          <% if @task.errors.any? %>
-            <div class="errors-container">
-              <ul>
-                <% @task.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-          <%= f.input :name,  class:"task-new__form-name",
-          :placeholder => "Name your task"  %>
-          <%= f.input :hours, class:"task-new__form-hours",
-          :placeholder => "How long do you think this will this take?" %>
-          <div class="text-center">
-          <%= f.submit "Create a task", class: "navbar-learnbox-item navbar-learnbox-link-sign-up" %>
+  <div class="container ctn-login">
+    <div class="login-top">
+      <h3>Create your task</h3>
+    </div>
+    <div class="goal-new__box">
+      <%= simple_form_for([@goal, @task ]) do |f| %>
+        <% if @task.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
           </div>
-          <!-- [...] all the fields -->
         <% end %>
-      <hr>
+        <%= f.input :name,  class:"task-new__form-name",
+        :placeholder => "Name your task"  %>
+        <%= f.input :hours, class:"task-new__form-hours",
+        :placeholder => "How long do you think this will this take?" %>
+        <div class="text-center">
+        <%= f.submit "Create a task", class: "btn btn-homepage" %>
+        </div>
+        <!-- [...] all the fields -->
+      <% end %>
+
     </div>
   </div>
 </div>
+
 

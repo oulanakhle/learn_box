@@ -56,17 +56,24 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+
+  &:hover {
+      color: white;
+  }
 }
 
 .navbar-learnbox-link-sign-up {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #FFA617;
-  border-radius: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-shadow: 6px 6px 35px -5px rgba(255,166,23,0.5);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #FFA617;
+    border-radius: 30px;
+    padding-top: 3px;
+    padding-bottom: 6px;
+
+    &:hover {
+        color: white;
+    }
 }
 
 /* Dropdown menu */

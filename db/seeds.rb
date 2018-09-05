@@ -73,7 +73,7 @@ GOALS = [
     ["Learn how to code in Python", "Study", "7"],
     ["Become proficient in Photoshop", "Study", "5"],
     ["Dance daily", "Others", "2"],
-    ["Record a daily youtube video", "Social", "7"],
+    ["Become a youtuber", "Social", "7"],
     ["Quit masturbation", "Intimacy", "9"],
     ["Learn how to play the Violin", "Study", "7"],
     ["Learn how to surf", "Fitness", "6"],

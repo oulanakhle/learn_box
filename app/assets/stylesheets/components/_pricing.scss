@@ -1,8 +1,19 @@
-.promos {
-  width: 800px;
+.pricing {
+  width: 750px;
+  height: 600px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
 }
+
+.pricing__wrapper {
+    text-align: center;
+}
+
+.pricing__text {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
 .promo {
   width: 250px;
   background: #0F1012;

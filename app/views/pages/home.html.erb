@@ -1,71 +1,50 @@
-<%= render 'shared/home-banner' %>
-<body>
-<div class="container">
-  <div class="bg-main">
-    <%= image_tag "learnbox-background.png" %>
-  </div>
-  <h1 class="simple__heading">IT'S SIMPLE</h1>
-  <p class="simple__text">Break down hard problems into smaller steps. Quantify your progress
-  regularly. If you go off track, your pledged money is temporarely locked until you get back on your feet.
-  Quit the challenge and your money will be given to a non-profit of your choice</p>
-  <div class="features-card-container">
-    <div class="features-card">
-      <div class="features-card-image">
-       <%= image_tag "goal.svg" %>
-        </div>
-          <div class="features-card-content">
-            <div class="features__text-l">Set a goal</div>
-            <div class="features__text-m">Or select one from our most popular list.</div>
-            <div class="features__text-s">There is a difference between having and achieving a goal. We are here to  help.</div>
+ <div class="homepage" style="background-image: url('<%= image_path 'learnbox-background.png' %>')">
+    <%= render 'shared/home-banner' %>
+    <div class="container">
+      <div class="features-card__wrapper">
+          <h1 class="simple__heading">IT'S SIMPLE</h1>
+          <p class="simple__text features-card__text">Break down hard problems into smaller steps. Quantify your progress
+          regularly. If you go off track, your pledged money is temporarely locked until you get back on your feet.
+          Quit the challenge and your money will be given to a non-profit of your choice</p>
+          <div class="features-card-container">
+            <div class="features-card">
+              <div class="features-card-image">
+               <%= image_tag "goal.svg" %>
+              </div>
+              <div class="features-card-content">
+                <div class="features__text-l">Set a goal</div>
+                <div class="features__text-m">Or select one from our most popular list.</div>
+                <div class="features__text-s">There is a difference between having and achieving a goal. We are here to  help.</div>
+              </div>
+            </div>
+                <div class="features-card">
+                  <div class="features-card-image">
+                    <%= image_tag "contract.svg" %>
+                  </div>
+                  <div class="features-card-content">
+                    <div class="features__text-l">Pledge amount</div>
+                    <div class="features__text-m">We will create a commitment contract</div>
+                    <div class="features__text-s">It is a binding agreement you sign with yourself to ensure fulfill your intentions.</div>
+                  </div>
+                </div>
+                <div class="features-card">
+                  <div class="features-card-image">
+                    <%= image_tag "start.svg" %>
+                  </div>
+                  <div class="features-card-content">
+                    <div class="features__text-l">Start Learning</div>
+                    <div class="features__text-m">Log in to report your achievements</div>
+                    <div class="features__text-s">We will track your progress and help you out if you get stuck.</div>
+                  </div>
+                </div>
           </div>
+      </div>
     </div>
-        <div class="features-card">
-          <div class="features-card-image">
-          <%= image_tag "contract.svg" %>
-          </div>
-            <div class="features-card-content">
-              <div class="features__text-l">Pledge amount</div>
-              <div class="features__text-m">We will create a commitment contract</div>
-              <div class="features__text-s">It is a binding agreement you sign with yourself to ensure fulfill your intentions.</div>
-            </div>
-        </div>
-          <div class="features-card">
-            <div class="features-card-image">
-            <%= image_tag "start.svg" %>
-            </div>
-            <div class="features-card-content">
-              <div class="features__text-l">Start Learning</div>
-              <div class="features__text-m">Log in to report your achievements</div>
-              <div class="features__text-s">We will track your progress and help you out if you get stuck.</div>
-            </div>
-          </div>
-  </div>
-</div>
 
-<div class="sm-padding bg-blue">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/UNP03fDSj1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
+    <div class="container pricing__wrapper">
+      <h1 class="simple__heading"> Pricing </h1>
+      <p class="pricing__text"> Fulfil your dreams or lose your pledge. It's a win-win.</p>
+      <%= render 'shared/pricing' %>
+    </div>
 
-<div class="sm-padding bg-white ">
-  <div class="container ">
-    <h1> Pricing </h1>
-    <p> Fulfil your dreams or lose your pledge. It's a win-win.</p>
-    <%= render 'shared/pricing' %>
-  </div>
-</div>
-
-<div class="sm-padding bg-orange text-white">
-  <div class="container ">
-    <h1> Climb your mountains. </h1>
-    <p> What can you achieve in 30 days?</p>
-  </div>
-  <div class="container ">
-    <%= render 'shared/carrousel' %>
-    <% if current_user %>
-        <%= link_to "Start your goal", goals_path, class: "btn btn-homepage bolder" %>
-      <% else %>
-        <%= link_to "Start your goal", new_user_registration_path, class: "btn btn-homepage bolder" %>
-      <% end %>
-  </div>
 </div>

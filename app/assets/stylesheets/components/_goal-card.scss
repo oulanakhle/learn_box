@@ -5,6 +5,7 @@
   border-radius: 3px;
   transition: all 0.15s ease;
   max-height: 100px;
+  background: white;
 }
 
 /* Body design */
@@ -28,7 +29,7 @@
 .product-body p {
   font-variant: light;
   font-size: 14px;
-  color: #999999;
+  color: #84B4FE;
   margin-top: 2px;
   margin-bottom: 0px;
 }
@@ -92,7 +93,7 @@
   color: #E6E6E6;
 }
 .product-controls a:hover {
-  color: #D3473C !important
+  color: #FFA617 !important
 }
 .product-controls-hidden a {
   color: transparent;
@@ -119,6 +120,10 @@
 .product:hover .product-controls-hidden a {
   color: #E6E6E6;
 }
-.product-upvote:hover .product-arrow {
+.product-upvote:hover .product-arrow{
   border-bottom: 9px solid #5898f1;
+}
+
+.product-upvote:hover .product-downvote{
+  border-top: 9px solid #5898f1;
 }

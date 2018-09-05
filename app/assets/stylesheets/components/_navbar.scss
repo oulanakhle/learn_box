@@ -1,6 +1,23 @@
+.headroom {
+    will-change: transform;
+    transition: 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+    background-color: rgba(255,255,255,.95);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+    background-color: rgba(255,255,255,0);
+}
+
+.headroom--top {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 /* Main navbar */
 .navbar-learnbox {
-  background: #d1d1d1;
+  background: #214a813b;
   border: transparent;
   height: 60px;
   padding: 0px 30px;

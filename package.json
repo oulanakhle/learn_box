@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "headroom.js": "^0.9.4",
     "jquery": "^3.3.1"
   },
   "devDependencies": {

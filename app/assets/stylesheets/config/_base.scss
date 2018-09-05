@@ -1,6 +1,5 @@
 .pages-container {
-  margin-top: 45px;
-  background-color: white;
+  background-color: $white;
 }
 
 
@@ -72,6 +71,11 @@
 .lg-padding {
   padding-top: 100px !important;
   margin-bottom: 100px !important;
+}
+
+.bolder {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 /////// bg image
 

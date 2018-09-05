@@ -6,68 +6,8 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="product card__border-red">
-        <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <div class='product-count'>95</div>
-          <div class="product-downvote"></div>
-        </div>
-        <img src="assets/arts.svg" alt="kudoz" class="product-image hidden-xs">
-        <div class='product-body'>
-          <h6> Average hours</h6>
-          <h3>Drawing a realistic self-portrait and a very long</h3>
-          <p>ARTS</p>
-        </div>
-        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
     <% if current_user.goals.any? %>
-      <%= render 'shared/goal-card' %>
-    <% end %>
-  </div>
-
-
-  <div class="goals-container">
-    <% if current_user.goals.any? %>
-      <% current_user.goals.each do |goal| %>
-        <%= link_to "edit", edit_goal_path(goal)  %>
-        <%= link_to "delete", goal_path(goal), method: "delete"  %>
-        <%= link_to goal_path(goal) do %>
-
-        <% if goal.difficulty >= 7 %>
-          <div class="goals-index-card card__border-red">
-
-        <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
-          <div class="goals-index-card card__border-yellow">
-
-        <% else %>
-          <div class="goals-index-card card__border-green">
-
-        <% end %>
-            <div class = "goals-index-card__title">
-              <h4><%= goal.name %></h4>
-            </div>
-            <div class="goals-index-card__subject">
-              <p><strong><%= goal.subject.name.upcase %></strong></p>
-            </div>
-            <div class = "goals-index-card__time">
-              <p>Average completion: <%= calculate_time(goal) %> Hours</p>
-              <br>
-            </div>
-            <!-- <div class = "goals-index-card__description">
-              <%= goal.description %>
-            </div> -->
-          </div>
-        <% end %>
-      <% end %>
+      <%= render 'shared/my-goal-card' %>
     <% end %>
   </div>
 

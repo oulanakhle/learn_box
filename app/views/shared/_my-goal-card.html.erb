@@ -1,5 +1,7 @@
 <% current_user.goals.each do |goal| %>
   <div class="col-xs-12 col-sm-6">
+    <%= link_to goal_path(goal) %>
+    <!-- if I link to do it fucks up the card -->
     <% if goal.difficulty >= 7 %>
       <div class="product card__border-red">
 
@@ -9,6 +11,7 @@
     <% else %>
       <div class="product card__border-green">
     <% end %>
+
         <div class='product-upvote'>
           <div class="product-arrow"></div>
           <div class='product-count'><%= goal.votes %></div>
@@ -21,9 +24,8 @@
           <p><%= goal.subject.name.upcase %></p>
         </div>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-          <li><a href=""><i class="fa fa-star"></i></a></li>
-          <li><a href=""><i class="fa fa-star"></i></a></li>
+          <li><%= link_to "edit", edit_goal_path(goal), class: "far fa-edit" %></li>
+          <li><%= link_to "", goal_path(goal), method: "delete", class: "far fa-trash-alt" %></li>
         </ul>
       </div>
   </div>

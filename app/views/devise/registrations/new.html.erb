@@ -1,36 +1,38 @@
-<div class="container ctn-login">
-  <div class="login-top">
-    <h3><strong>Sign up</strong></h3>
-  </div>
-  <div class="login-box">
+<div class="login__wrapper" style="background-image: url('<%= image_path('Sign-up.png') %>')">
+  <div class="container ctn-login">
+    <div class="login-top">
+      <h3>SIGN UP</h3>
+    </div>
+    <div class="signup-box">
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :name,
-                    required: true,
-                    autofocus: true ,
-                    input_html: { autocomplete: "Your name" }%>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true ,
-                    input_html: { autocomplete: "My email" }%>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "My password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "My password confirmation" } %>
-      </div>
+        <div class="form-inputs login-username login-password">
+          <%= f.input :name,
+                      required: true,
+                      autofocus: true ,
+                      input_html: { autocomplete: "Your name" }%>
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true ,
+                      input_html: { autocomplete: "My email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "My password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "My password confirmation" } %>
+        </div>
 
-      <div class="form-actions text-center">
-        <%= f.button :submit, "Sign up", class: "btn-primary btn-md" %>
-      </div>
-    <% end %>
+        <div class="form-actions text-center">
+          <%= f.button :submit, "Sign up", class: "navbar-learnbox-item navbar-learnbox-link-sign-up" %>
+        </div>
+      <% end %>
 
-    <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
 
+    </div>
   </div>
 </div>

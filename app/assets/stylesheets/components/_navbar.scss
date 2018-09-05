@@ -1,6 +1,10 @@
 .headroom {
     will-change: transform;
     transition: 200ms linear;
+
+    .solid-nav & {
+        background-color: rgba(33, 74, 129, 0.2) !important;
+    }
 }
 .headroom--pinned {
     transform: translateY(0%);

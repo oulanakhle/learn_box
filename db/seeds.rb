@@ -90,14 +90,14 @@ GOALS = [
     ["Learn how to Climb", "Fitness", "4"]
 ]
 
-oula = User.create(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
+oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
 5.times do
-  a = User.create(email: Faker::Internet.email, password: "123456")
+  a = User.create!(email: Faker::Internet.email, password: "123456")
   puts "Created #{a.email}"
   #name?? --> TODO: add later
 end
 
-ab = User.create(name: "anon", email: "a@b.com", password: "123456")
+ab = User.create!(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"
 CATEGORIES.each do |element|
@@ -111,19 +111,19 @@ GOALS.each do |goal|
   if !Subject.find_by_name(goal[1]).nil?
     subject = Subject.find_by_name(goal[1])
   else
-    subject = Subject.find_by_name("Others")
+    subject = Subject.find_by_name("others")
   end
-  c = Goal.create(name: goal[0], description: "", difficulty: goal[2], subject: subject, user: User.last,  progress: rand(0..50), votes: rand(0..200))
+  c = Goal.create!(name: goal[0], description: "", difficulty: goal[2], subject: subject, user: User.last,  progress: rand(0..50), votes: rand(0..200))
   puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
   puts
 
   5.times do
-    todo = Task.create(name: "Early game heroes", completed: false, hours: rand(1..3), goal: Goal.last)
+    todo = Task.create!(name: "Early game heroes", completed: false, hours: rand(1..3), goal: Goal.last)
     puts "Created Task #{todo.name} for #{todo.goal.name} "
   end
 
   3.times do
-    link = Link.create(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
+    link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
     puts "Created link #{link.url} for #{link.goal.name} "
   end
 end

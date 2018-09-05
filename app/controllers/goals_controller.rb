@@ -26,7 +26,27 @@ class GoalsController < ApplicationController
     @goal.subject = @subject
 
     if @goal.save
-      redirect_to goals_path()
+      redirect_to dashboard_path()
+    else
+      render 'new'
+      # do
+    end
+  end
+
+  def create_from_copy
+    admin_goal = Goal.find(params[:id])
+    @my_goal= admin_goal.dup
+    @my_goal.votes = 1
+    @my_goal.user = current_user
+
+    if @my_goal.save
+      admin_goal.tasks.each do |task|
+        new_task = task.dup
+        new_task.goal = @my_goal
+        new_task.save
+      end
+      redirect_to dashboard_path()
+
     else
       render 'new'
       # do
@@ -46,27 +66,7 @@ class GoalsController < ApplicationController
   def destroy
     @goal = Goal.find(params[:id])
     @goal.destroy()
-    redirect_to goals_path()
-  end
-
-  def create_from_copy
-    admin_goal = Goal.find(params[:id])
-    @my_goal= admin_goal.dup
-    @my_goal.votes = 0
-    @my_goal.user = current_user
-
-    if @my_goal.save
-      admin_goal.tasks.each do |task|
-        new_task = task.dup
-        new_task.goal = @my_goal
-        new_task.save
-      end
-      redirect_to goals_path()
-
-    else
-      render 'new'
-      # do
-    end
+    redirect_to dashboard_path()
   end
 
   private

@@ -10,7 +10,7 @@
      <%= link_to "Add task", new_goal_task_path(@goal), class: "add-task-btn-2" %>
     </div>
   </div>
-   <div class="row">
+   <div class="task-card__row">
       <% @goal.tasks.each_with_index do |task, index| %>
         <div class="task-card">
           <div class="task-card-taskname">

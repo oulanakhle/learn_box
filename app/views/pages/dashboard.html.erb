@@ -1,40 +1,20 @@
-<div class="container ">
-  <h6 class="pages-dashboard__small-text"> Dashboard </h6>
+<div class="container bottom-big-margin";>
   <div class="row">
-    <div class="card">
-      <h3 class="pages-dashboard__bigger-text">Create a goal to get started 👇</h3>
+    <div class ="col-xs-12">
+      <h6 class="pages-dashboard__small-text"> My goals</h6>
     </div>
   </div>
-  <div class="text-center top-margin">
-    <%= link_to "+ Add goal", new_goal_path, class: "btn-primary goal-add__dashboard-btn" %>
+
+  <div class="row">
+    <% if current_user.goals.any? %>
+      <%= render 'shared/my-goal-card' %>
+    <% end %>
   </div>
-</div>
 
-<div class="container goals-container top-margin">
-  <h6 class="pages-dashboard__small-text">  Suggested Goals</h6>
-  <% @my_goals.each do |goal| %>
-    <%= link_to goal_path(goal) do %>
-
-    <% if goal.difficulty >= 7 %>
-      <div class="goals-index-card card__border-red">
-
-    <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
-      <div class="goals-index-card card__border-yellow">
-
-    <% else %>
-      <div class="goals-index-card card__border-green">
-
-    <% end %>
-        <div class = "goals-index-card__title">
-          <h4><%= goal.name %></h4>
-        </div>
-        <div class="goals-index-card__subject">
-          <p><strong><%= goal.subject.name.upcase %></strong></p>
-        </div>
-        <div class = "goals-index-card__time">
-          <p>Average completion: <%= calculate_time(goal) %> Hours</p>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="card">
+    <h3 class="text-center">Browse or create a new goal 👇</h3>
+    <div class="text-center xs-margin parent-buttons">
+      <%= link_to "BROWSE", goals_path, class: "btn btn-orange" %>
+      <%= link_to "CREATE", new_goal_path, class: "btn btn-orange" %>
+    </div>
 </div>

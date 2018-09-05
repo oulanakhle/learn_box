@@ -1,5 +1,39 @@
-<div class="container bottom-big-margin">
-  <h6 class="pages-dashboard__small-text"> My goals</h6>
+<div class="container bottom-big-margin", style="background-color: grey";>
+  <div class="row">
+    <div class ="col-xs-12">
+      <h6 class="pages-dashboard__small-text"> My goals</h6>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="product">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>95</div>
+          <div class="product-downvote"></div>
+        </div>
+        <img src="assets/arts.svg" alt="kudoz" class="product-image hidden-xs">
+        <div class='product-body'>
+          <h6> Average hours</h6>
+          <h3>Drawing a realistic self-portrait</h3>
+          <p>ARTS</p>
+        </div>
+        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+          <li><a href=""><i class="fa fa-star"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <p>"Lucas"</p>
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+
   <div class="goals-container">
     <% if current_user.goals.any? %>
       <% current_user.goals.each do |goal| %>

@@ -12,7 +12,7 @@
       <% else %>
         <div class="product card__border-green">
       <% end %>
-        <%= link_to goal_path(goal), class: "product-link" do %>
+        <%= link_to show_public_path(goal), class: "product-link" do %>
           <div class='product-upvote'>
             <div class="product-arrow"></div>
             <div class='product-count'><%= goal.votes %></div>

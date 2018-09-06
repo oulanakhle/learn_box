@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/dashboard', to: 'pages#dashboard'
-
+  get '/goals/:id/show_public', to: 'goals#show_public', as: 'show_public'
   # get 'goals/:goal_id/task/edit'
   resources :subjects, only: [:index, :show]
   resources :goals, only: [:index, :show, :new, :create, :edit, :update, :destroy,] do

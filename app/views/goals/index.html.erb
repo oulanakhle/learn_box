@@ -5,6 +5,13 @@
         <h3 class="dashboard__h3 top-padding">Browse and add goals to your dashboard 👇</h3>
       </div>
       <div class="col-xs-12">
+        <%= form_tag goals_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for your goal"
+          %>
+        <% end %>
         <h4 class="dashboard__h4 ">Select your difficulty</h4>
         <div class="goal-index-filter">
           <div class="goal_index-filter__box goal-index-filter__active">

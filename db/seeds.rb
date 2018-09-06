@@ -62,7 +62,7 @@ GOALS = [
     ["Watch a film daily", "Others", "medium"],
     ["Align your wardrobe", "Others", "medium"],
     ["Write one idea per day", "Self-Improvement", "easy"],
-    ["Text one forgotten friend", "Social", "1"],
+    ["Text one forgotten friend", "Social", "easy"],
     ["Go on a date daily", "Intimacy", "hard"],
     ["Give up social media", "Self-Improvement", "medium"],
     ["Try being a vegetarian", "Health", "medium"],

@@ -87,6 +87,47 @@ GOALS = [
     ["Learn how to Climb", "Fitness", "medium"]
 ]
 
+TASKS = [
+  [
+    [name: "Write a book"],
+    ["Plan your novel (Set an overall and daily word count goal...)",
+      "Start writing (start at the beginning of a month!)",
+      "Write the outline for the first act",
+      "Write the outline of the first half of the second act",
+      "Finish the outline of the second act",
+      "Write the outline for the third act",
+      "Start writing for real (adher to the goal you set yourself in the beginning)"
+    ]
+  ],
+
+  [
+    [name: "Learn how to draw"],
+      ["Draw shapes",
+        "Give value to your shapes",
+        "Draw objects shaped like a sphere",
+        "Draw simple three-dimensional objects like cubes",
+        "More complex three-dimensional objects",
+        "Draw more complex objects (e.g. a house)",
+        "Draw shades and shadows",
+        "Draw overlapping objects"
+      ]
+  ],
+
+  [
+    [name: "Solve the Rubik's Cube fast"],
+      ["Familiarize with the concept of the rubics cube",
+        "Look up and practice one way to solve the cube",
+        "Look up and practice a different way",
+        "Practice solving the cube both ways, see what works best for you",
+        "Practice",
+        "Practice",
+        "Practice",
+        "Practice"
+      ]
+    ]
+  ]
+
+
 oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
 5.times do
   a = User.create!(email: Faker::Internet.email, password: "123456")
@@ -94,7 +135,6 @@ oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "1234
   #name?? --> TODO: add later
 end
 
-faper = User.create!(name: "faper", email: "addicted@porn.com", password: "123456")
 ab = User.create!(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"
@@ -104,6 +144,8 @@ CATEGORIES.each do |element|
   puts "Created Category #{b.name}"
 end
 
+
+
 puts "Creating goals"
 GOALS.each do |goal|
   if !Subject.find_by_name(goal[1]).nil?
@@ -111,17 +153,25 @@ GOALS.each do |goal|
   else
     subject = Subject.find_by_name("others")
   end
+
   c = Goal.create!(name: goal[0], description: "", difficulty: goal[2], subject: subject, user: User.last,  progress: rand(0..50), votes: rand(0..200))
   puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
   puts
 
-  30.times do
-    todo = Task.create!(name: "Do not FAP. Do NOT open Pornhub.", completed: false, hours: rand(1..3), goal: Goal.last)
-    puts "Created Task #{todo.name} for #{todo.goal.name} "
-  end
+  todo = Task.create!(name: "Draw portrait of myself", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo2 = Task.create!(name: "Draw overlapping objects", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo3 = Task.create!(name: "Draw shades and shadows", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo4 = Task.create!(name: "Draw more complex objects (e.g. a house)", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo5 = Task.create!(name: "More complex three-dimensional objects", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo6 = Task.create!(name: "Draw simple three-dimensional objects like cubes", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo7 = Task.create!(name: "Draw objects shaped like a sphere", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo8 = Task.create!(name: "Give value to your shapes", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo9 = Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
+  puts "Created Task #{todo.name} for #{todo.goal.name} "
 
-  3.times do
-    link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
-    puts "Created link #{link.url} for #{link.goal.name} "
-  end
+  # 3.times do
+  #   link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
+  #   puts "Created link #{link.url} for #{link.goal.name} "
+  # end
 end
+

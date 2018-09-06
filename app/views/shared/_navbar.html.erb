@@ -10,6 +10,8 @@
     <% if user_signed_in? %>
       <!-- Links when logged in -->
       <!-- Avatar with dropdown menu -->
+      <%= link_to t(".browse", default: "Browse"),goals_path , class: "navbar-learnbox-item navbar-learnbox-link-sign-in" %>
+      <%= link_to t(".dashboard", default: "My Goals"), dashboard_path, class: "navbar-learnbox-item navbar-learnbox-link-sign-in" %>
       <div class="navbar-learnbox-item">
         <div class="dropdown">
           <%= image_tag "https://cdn2.vectorstock.com/i/thumb-large/23/81/default-avatar-profile-icon-vector-18942381.jpg", class: "avatar dropdown-toggle", id: "navbar-learnbox-menu", "data-toggle" => "dropdown" %>

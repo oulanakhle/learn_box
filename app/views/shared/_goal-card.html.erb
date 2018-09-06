@@ -7,7 +7,7 @@
         <div class="product card__border-red">
 
       <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
-        <div class="product card__border-yellow">
+        <div class="product card__border-orange">
 
       <% else %>
         <div class="product card__border-green">
@@ -26,7 +26,7 @@
           </div>
         <% end %>
           <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-            <li><%= link_to "Add", create_from_copy_path(id: goal.id), method: "post", class: "fas fa-plus" %></li>
+            <li><%= link_to "Add", create_from_copy_path(id: goal.id), method: "post", class: "far fa-star" %></li>
           </ul>
       </div>
   </div>

@@ -2,18 +2,32 @@
   <div class="container ">
     <div class="row">
       <div class="col-xs-12">
-        <h3 class="dashboard__h3 text-center top-padding">View your goals and create new ones 👇</h3>
+        <h3 class="dashboard__h3 top-padding">Browse and add goals to your dashboard 👇</h3>
       </div>
       <div class="col-xs-12">
-        <div class=" dashboard__parent-btns text-center xs-margin">
-          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-orange dashboard__btn-side-margin" %>
-          <%= link_to "CREATE", new_goal_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+        <h4 class="dashboard__h4 ">Select your difficulty</h4>
+        <div class="goal-index-filter">
+          <div class="goal_index-filter__box goal-index-filter__active">
+            <div class="goal-index-filter__green "></div>
+          </div>
+          <%= link_to "test green", difficulty: "easy" %>
+          <div class="goal_index-filter__box goal-index-filter__active">
+            <div class="goal-index-filter__orange"></div>
+          </div>
+          <div class="goal_index-filter__box goal-index-filter__active">
+            <div class="goal-index-filter__red"></div>
+          </div>
         </div>
       </div>
     </div>
     <div class="dashboard__cards-wrapper lg-padding">
       <div class="row">
         <%= render 'shared/goal-card' %>
+      </div>
+      <div class="col-xs-12">
+        <div class=" dashboard__parent-btns text-center xs-margin">
+          <%= link_to "DASHBOARD", dashboard_path, class: "btn btn-orange dashboard__btn-side-margin" %>
+        </div>
       </div>
     </div>
   </div>

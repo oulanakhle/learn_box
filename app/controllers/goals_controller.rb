@@ -1,9 +1,10 @@
 class GoalsController < ApplicationController
   def index
-    if params[:difficulty]
-      @goals = Goal.where(difficulty: params[:difficulty])
-      @difficulty = params[:difficulty]
-    else
+    if params[:query].present?
+      @goals = Goal.where("name ILIKE ?", "%#{params[:query]}%")
+    # if params[:difficulty]
+    #   @goals = Goal.where(difficulty: params[:difficulty])
+      else
       @goals = Goal.all
     end
     @subject = Subject.all

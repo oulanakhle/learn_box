@@ -25,6 +25,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @tasks = Task.all
     @goals = Goal.all
+    @links = Link.all
 
   end
 

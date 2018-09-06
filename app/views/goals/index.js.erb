@@ -11,7 +11,8 @@ console.log("Hello")
   }
     filter.classList.toggle("goal-index-filter__active");
    console.log(parentId)
-   console.log("<%= @goals %>")
+   console.log("<%= @goals.last.name %>")
+
  <%else %>
    console.log("You suck at coding")
  <%end %>

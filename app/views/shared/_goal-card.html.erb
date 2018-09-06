@@ -2,13 +2,13 @@
   <div class="col-xs-12 col-sm-6">
     <!-- if I link to do it fucks up the card -->
       <% if goal.difficulty == "hard" %>
-        <div class="product card__border-red">
+        <div class="product card__border-hard">
 
       <% elsif goal.difficulty == "medium" %>
-        <div class="product card__border-orange">
+        <div class="product card__border-medium">
 
       <% else %>
-        <div class="product card__border-green">
+        <div class="product card__border-easy">
       <% end %>
         <%= link_to show_public_path(goal), class: "product-link" do %>
           <div class='product-upvote'>

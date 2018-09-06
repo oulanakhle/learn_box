@@ -1,9 +1,14 @@
 class GoalsController < ApplicationController
   def index
-    @goals = Goal.all
+    if params[:difficulty]
+      @goals = Goal.where(difficulty: params[:difficulty])
+    else
+      @goals = Goal.all
+    end
     @subject = Subject.all
     @tasktime = 0
     @new_goal = Goal.new
+
 
     #should I go through all the tasks & calc --> total time, deadline?
   end

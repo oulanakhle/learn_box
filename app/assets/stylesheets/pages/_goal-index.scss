@@ -44,7 +44,6 @@
   padding-left: 5px;
 }
 
-
 .goals-index-card__import {
   margin-left: auto;
   font-size: 14px;
@@ -56,10 +55,55 @@
   border-right: 10px solid #EB5A46;
 }
 
-.card__border-yellow {
+.card__border-orange {
   border-right: 10px solid #F7A500;
 }
 
 .card__border-green {
   border-right: 10px solid #61BD4F;
+}
+
+.goal-index-filter {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.goal_index-filter__box{
+  position:relative;
+  width: 30px;
+  height: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.goal-index-filter__green {
+  position:relative;
+  width: 30px;
+  height: 30px;
+  background-color: #61BD4F;
+  border-radius: 50%;
+
+}
+
+.goal-index-filter__orange {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #F7A500;
+  border-radius: 50%;
+}
+
+.goal-index-filter__red {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #EB5A46;
+  border-radius: 50%;
+}
+
+.goal-index-filter__active {
+  border-bottom: 2px solid black;
 }

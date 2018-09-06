@@ -170,9 +170,9 @@ GOALS.each do |goal|
   todo9 = Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
   puts "Created Task #{todo.name} for #{todo.goal.name} "
 
-  # 3.times do
-  #   link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
-  #   puts "Created link #{link.url} for #{link.goal.name} "
-  # end
+
+  link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
+    puts "Created link #{link.url} for #{link.goal.name} "
+  end
 end
 

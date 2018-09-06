@@ -14,13 +14,15 @@
 .product-link {
   display: flex;
   align-items: center;
-  &:visited, &:link, &:hover, &:active, &:focus {
+  &:visited, &:link, &, &:active, &:focus {
     text-decoration: none;
   }
 }
 
 /* Body design */
+
 .product-body {
+
   flex: 1 1 auto;
 }
 .product-body h6 {
@@ -40,7 +42,7 @@
 .product-body p {
   font-weight: 300;
   font-size: 14px;
-  color: #84B4FE;
+  color: black;
   margin-top: 2px;
   margin-bottom: 0px;
 }
@@ -71,7 +73,7 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
+  border-bottom: 9px solid gray;
   border-radius: 2px;
   margin: auto;
 }
@@ -83,7 +85,7 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid transparent;
-  border-top: 9px solid black;
+  border-top: 9px solid gray;
   border-radius: 2px;
   margin: auto;
 }
@@ -97,43 +99,57 @@
   margin-right: 10px;
   max-width: 56px;
 }
+
 .product-controls a {
-  padding: 0px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.product-controls a:hover {
   color: #FFA617 !important
 }
-.product-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
+
 
 /* Hover effects */
-.product:hover {
+.product {
   background: #f7f7fa;
   cursor: pointer;
 }
-.product-upvote:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
+.product-upvote, .product-upvote.product-upvote-upvoted {
+  color: gray;
   cursor: pointer;
 }
 .product-upvote-upvoted .product-arrow {
-  border-bottom-color: #5898f1;
+  border-bottom-color: gray;
 }
-// .product:hover .product-upvote {
+// .product .product-upvote {
 //   transform: scale(1.2)
 // }
-.product:hover .product-controls-hidden a {
+.product .product-controls-hidden a {
   color: #E6E6E6;
 }
-.product-upvote:hover .product-arrow{
-  border-bottom: 9px solid #5898f1;
+.product-upvote .product-arrow{
+  border-bottom: 9px solid gray;
 }
 
-.product-upvote:hover .product-downvote{
-  border-top: 9px solid #5898f1;
+.product-upvote .product-downvote{
+  border-top: 9px solid gray;
+}
+
+.product-body:link p,h3,h6 {
+    text-decoration: none;
+    color: black;
+}
+
+/* visited link */
+.product-body:visited  p,h3,h6 {
+    text-decoration: none;
+    color: black;
+}
+
+/* mouse over link */
+.product-body:hover  p,h3,h6 {
+    text-decoration: none;
+    color: black;
+}
+
+/* selected link */
+.product-body:active  p,h3,h6 {
+    text-decoration: none;
+    color: black;
 }

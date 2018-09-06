@@ -1,20 +1,21 @@
-
 <div class="container">
   <div class="dashboard-container">
   <div class="dashboard-row">
     <div class="dashboard-top-text">
-      <div class="dashboard-title">
-        My Goals
+      <div class="dashboard__h3 text-center ">
+        My Goals 🥇🥈🥉
       </div>
     </div>
     <div class="dashboard-links">
       <%= link_to "BROWSE", goals_path, class: "btn btn-orange dashboard__btn-side-margin" %>
       <%= link_to "CREATE", new_goal_path, class: "btn btn-orange dashboard__btn-side-margin" %>
     </div>
-    <div class="dashboard-row">
-      <% if current_user.goals.any? %>
-        <%= render 'shared/my-goal-card' %>
-      <% end %>
+    <div class="dashboard__cards-wrapper lg-padding">
+      <div class="row">
+        <% if current_user.goals.any? %>
+          <%= render 'shared/my-goal-card' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

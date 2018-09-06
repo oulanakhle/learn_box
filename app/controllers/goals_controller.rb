@@ -1,20 +1,20 @@
 class GoalsController < ApplicationController
   def index
-    if params[:query].present?
+    if params[:difficulty]
+      @goals = Goal.where(difficulty: params[:difficulty])
+    elsif params[:query].present?
       @goals = Goal.where("name ILIKE ?", "%#{params[:query]}%")
-    # if params[:difficulty]
-    #   @goals = Goal.where(difficulty: params[:difficulty])
-      else
+    else
       @goals = Goal.all
     end
     @subject = Subject.all
     @tasktime = 0
     @new_goal = Goal.new
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    #respond_to do |format|
+    #  format.html
+    #  format.js
+    #end
 
     #should I go through all the tasks & calc --> total time, deadline?
   end

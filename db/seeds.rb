@@ -148,6 +148,7 @@ end
 
 
 puts "Creating goals"
+
 GOALS.each do |goal|
   if !Subject.find_by_name(goal[1]).nil?
     subject = Subject.find_by_name(goal[1])
@@ -172,7 +173,6 @@ GOALS.each do |goal|
 
 
   link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
-    puts "Created link #{link.url} for #{link.goal.name} "
-  end
+  puts "Created link #{link.url} for #{link.goal.name} "
 end
 

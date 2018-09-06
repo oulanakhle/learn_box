@@ -2,7 +2,7 @@ console.log("Hello")
 
  <%if @difficulty %>
    console.log("Inside <%= @difficulty %>")
-  if ( typeof task === "undefined") {
+  if ( typeof parentId === "undefined") {
     parentId = "<%= @difficulty %>-parent"
     filter = document.querySelector(`#${parentId}`);
   } else {
@@ -13,9 +13,20 @@ console.log("Hello")
    console.log(parentId)
    console.log("<%= @goals.last.name %>")
 
+  if ( typeof cardContainer === "undefined") {
+    cardContainer = document.querySelector ("#row__card-holder")
+  } else {
+    cardContainer = document.querySelector ("#row__card-holder")
+  }
+  cardContainer.innerHTML = "";
+
+  var row = `<%= j render 'shared/goal-card' %>`
+  cardContainer.insertAdjacentHTML("afterbegin", row )
+
  <%else %>
    console.log("You suck at coding")
  <%end %>
+
 
 //   Add class to coloured circle that has the id of the difficulty
 //   Clear the html from the row that holds the cards
@@ -43,3 +54,5 @@ console.log("Hello")
 //           </ul>
 //       </div>
 //   </div>`
+
+//<% @goals.sort_by { |goal| goal.difficulty } %>

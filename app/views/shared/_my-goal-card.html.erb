@@ -1,6 +1,6 @@
 <% current_user.goals.each do |goal| %>
   <!-- doing displaying a different card according to if there's a next item or not -->
-  <div class="col-xs-12 col-sm-6">
+  <div class="col-xs-8 col-xs-offset-2">
     <% if goal.difficulty >= 7 %>
       <div class="product card__border-red">
     <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>

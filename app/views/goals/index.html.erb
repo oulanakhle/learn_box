@@ -18,7 +18,7 @@
         </div>
         <h4 class="dashboard__h4 ">Select your difficulty</h4>
         <div class="goal-index-filter">
-          <div class="goal_index-filter__box">
+          <div class="goal_index-filter__box" id="easy-parent">
             <%= link_to difficulty: "easy", remote: true do %>
             <!-- #remote: true -->
               <div class="goal-index-filter__green ">
@@ -26,12 +26,12 @@
             <% end %>
           </div>
 
-          <div class="goal_index-filter__box">
+          <div class="goal_index-filter__box" id="medium-parent">
             <%= link_to difficulty: "medium", remote: true do %> <!-- #remote: true -->
               <div class="goal-index-filter__orange"></div>
             <% end %>
           </div>
-          <div class="goal_index-filter__box">
+          <div class="goal_index-filter__box" id="hard-parent">
             <%= link_to difficulty: "hard", remote: true do %> <!-- #remote: true -->
               <div class="goal-index-filter__red"></div>
             <% end %>

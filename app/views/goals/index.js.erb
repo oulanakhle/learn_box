@@ -2,7 +2,16 @@ console.log("Hello")
 
  <%if @difficulty %>
    console.log("Inside <%= @difficulty %>")
-
+  if ( typeof task === "undefined") {
+    parentId = "<%= @difficulty %>-parent"
+    filter = document.querySelector(`#${parentId}`);
+  } else {
+    parentId = "<%= @difficulty %>-parent"
+    filter = document.querySelector(`#${parentId}`);
+  }
+    filter.classList.toggle("goal-index-filter__active");
+   console.log(parentId)
+   console.log("<%= @goals %>")
  <%else %>
    console.log("You suck at coding")
  <%end %>

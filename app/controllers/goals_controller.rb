@@ -11,6 +11,10 @@ class GoalsController < ApplicationController
     @tasktime = 0
     @new_goal = Goal.new
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
 
     #should I go through all the tasks & calc --> total time, deadline?
   end

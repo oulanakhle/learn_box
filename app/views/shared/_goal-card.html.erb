@@ -3,10 +3,10 @@
 <% arr.reverse.each do |goal| %>
   <div class="col-xs-12 col-sm-6">
     <!-- if I link to do it fucks up the card -->
-      <% if goal.difficulty >= 7 %>
+      <% if goal.difficulty == "hard" %>
         <div class="product card__border-red">
 
-      <% elsif goal.difficulty >= 4 && goal.difficulty < 7 %>
+      <% elsif goal.difficulty == "medium" %>
         <div class="product card__border-orange">
 
       <% else %>

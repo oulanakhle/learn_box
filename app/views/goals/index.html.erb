@@ -14,15 +14,23 @@
         <% end %>
         <h4 class="dashboard__h4 ">Select your difficulty</h4>
         <div class="goal-index-filter">
-          <div class="goal_index-filter__box goal-index-filter__active">
-            <div class="goal-index-filter__green "></div>
+          <div class="goal_index-filter__box">
+            <%= link_to difficulty: "easy" do %>
+            <!-- #remote: true -->
+              <div class="goal-index-filter__green ">
+              </div>
+            <% end %>
           </div>
-          <%= link_to "test green", difficulty: "easy" %>
-          <div class="goal_index-filter__box goal-index-filter__active">
-            <div class="goal-index-filter__orange"></div>
+
+          <div class="goal_index-filter__box">
+            <%= link_to difficulty: "medium" do %> <!-- #remote: true -->
+              <div class="goal-index-filter__orange"></div>
+            <% end %>
           </div>
-          <div class="goal_index-filter__box goal-index-filter__active">
-            <div class="goal-index-filter__red"></div>
+          <div class="goal_index-filter__box">
+            <%= link_to difficulty: "hard" do %> <!-- #remote: true -->
+              <div class="goal-index-filter__red"></div>
+            <% end %>
           </div>
         </div>
       </div>

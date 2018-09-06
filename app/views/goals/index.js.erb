@@ -1,0 +1,29 @@
+console.log("<%= @difficulty %>")
+
+if difficulty -
+  Add class to coloured circle that has the id of the difficulty
+  Clear the html from the row that holds the cards
+  Fill the row with the card html for each one
+
+ let card =  `
+ <div class="col-xs-12 col-sm-6">
+    <!-- if I link to do it fucks up the card -->
+        <div class="product card__border-orange">
+
+        <a class="product-link" href="/goals/1440/show_public">
+          <div class="product-upvote">
+            <div class="product-arrow"></div>
+            <div class="product-count">196</div>
+            <div class="product-downvote"></div>
+          </div>
+          <img class="product-image hidden-xs" src="/assets/others-284799cde2881adcd478b848cf0e513c85f72b3cdadce04e770e53c2a5d50e7b.svg">
+          <div class="product-body">
+            <h6>Average completion: 67 Hours</h6>
+            <h3>Try being a vegan</h3>
+            <p>OTHERS</p>
+          </div>
+</a>          <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+            <li><a class="far fa-star" rel="nofollow" data-method="post" href="/create_from_copy?id=1440">Add</a></li>
+          </ul>
+      </div>
+  </div>`

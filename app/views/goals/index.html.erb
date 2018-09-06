@@ -41,6 +41,8 @@
     </div>
     <div class="dashboard__cards-wrapper lg-padding">
       <div class="row">
+        <% @goals = @goals.sort_by { |goal| goal.votes } %>
+        <% @goals.reverse! %>
         <%= render 'shared/goal-card' %>
       </div>
       <div class="col-xs-12">

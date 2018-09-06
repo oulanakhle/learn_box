@@ -14,6 +14,9 @@
 .product-link {
   display: flex;
   align-items: center;
+  &:visited, &:link, &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
 }
 
 /* Body design */

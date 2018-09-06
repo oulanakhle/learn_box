@@ -18,7 +18,7 @@
             <div class='product-count'><%= goal.votes %></div>
             <div class="product-downvote"></div>
           </div>
-          <img src="assets/<%= goal.subject.name.downcase %>.svg" alt="<%= goal.subject.name.downcase %>" class="product-image hidden-xs">
+          <%= image_tag goal.subject.name.downcase + '.svg', class: "product-image hidden-xs"%>
           <div class='product-body'>
             <h6>Average completion: <%= calculate_time(goal) %> Hours</h6>
             <h3><%= goal.name %></h3>

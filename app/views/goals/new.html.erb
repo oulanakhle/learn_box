@@ -17,7 +17,7 @@
         <%= f.input :name, placeholder: "What do you want to achieve?" %>
         <%#= f.input :subject, placeholder: "What subject it belongs to?"%>
         <%= f.association :subject, collection: Subject.all, promt: "What subject does it belong to?" %>
-        <%= f.input :difficulty, collection: 1..10 %>
+        <%= f.input :difficulty, collection: ["easy", "medium", "hard"]%>
         <%= f.input :description, placeholder: "Add a description to the goal" %>
 
         <div class="text-center">

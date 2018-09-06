@@ -20,6 +20,15 @@
           <h3><%= goal.name %></h3>
           <p><%= goal.subject.name.upcase %></p>
         </div>
+        <div class='product-task'>
+          <% counter = 0 %>
+          <% goal.tasks.each do |task| %>
+            <% if task.completed %>
+              <% counter += 1 %>
+            <% end %>
+          <%end %>
+          <%= "#{counter} / #{goal.tasks.length}" %>
+        </div>
       <% end %>
         <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
           <li><%= link_to "", edit_goal_path(goal), class: "fa fa-edit" %></li>

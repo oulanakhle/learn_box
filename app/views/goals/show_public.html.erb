@@ -1,0 +1,27 @@
+<div class="goal-show__wrapper">
+  <div class="goal-show__top-content">
+    <div class="goal-show__goal-word">
+    Goal
+    </div>
+    <div class="goal-show__goal-title">
+    <%= @goal.name %>
+    </div>
+    <div class="add-task-btn">
+     <%#= link_to "Add task", new_goal_task_path(@goal), class: "add-task-btn2" %>
+      <%= link_to "Import Goal", create_from_copy_path(id: @goal.id), method: "post", class: "add-task-btn2" %>
+    </div>
+  </div>
+   <div class="task-card__row">
+      <% @goal.tasks.each_with_index do |task, index| %>
+         <div class="task-card">
+          <div class="task-card-left">
+            <!--  -->
+                <h2 class="task-card-taskname"><%= task.name %>
+                </h2>
+             </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

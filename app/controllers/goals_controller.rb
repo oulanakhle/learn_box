@@ -15,6 +15,12 @@ class GoalsController < ApplicationController
 
   end
 
+  def show_public
+    @goal = Goal.find(params[:id])
+    @tasks = Task.all
+    @goals = Goal.all
+  end
+
   def new
     @goal = Goal.new
   end

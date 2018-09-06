@@ -135,6 +135,7 @@ oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "1234
   #name?? --> TODO: add later
 end
 
+nico = User.create!(name: "niko", email: "niko@gmail.com", password: "123456")
 ab = User.create!(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"

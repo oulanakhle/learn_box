@@ -1,8 +1,8 @@
 <div class = "bg-grey">
-  <div class="container md-margin">
+  <div class="container ">
     <div class="row">
       <div class="col-xs-12">
-        <h3 class=" dashboard__h3 text-center">View your goals and create new ones 👇</h3>
+        <h3 class="dashboard__h3 text-center top-padding">View your goals and create new ones 👇</h3>
       </div>
       <div class="col-xs-12">
         <div class=" dashboard__parent-btns text-center xs-margin">
@@ -11,7 +11,10 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <%= render 'shared/goal-card' %>
+    <div class="dashboard__cards-wrapper lg-padding">
+      <div class="row">
+        <%= render 'shared/goal-card' %>
+      </div>
+    </div>
   </div>
 </div>

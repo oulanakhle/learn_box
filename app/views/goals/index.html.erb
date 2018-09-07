@@ -7,16 +7,15 @@
       <div class="col-xs-12">
         <div class="search-form">
           <div class="search-rectangle">
-        <%= form_tag goals_path, method: :get do %>
-        </div>
-          <%= text_field_tag :query,
+            <%= form_tag goals_path, method: :get do %>
+          </div>
+            <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Search for your goal"
-          %>
+            placeholder: "Try searching for something you want to learn" %>
         <% end %>
         </div>
-        <h4 class="dashboard__h4 ">Select your difficulty</h4>
+        <h4 class="dashboard__h4 sm-padding">Select your difficulty</h4>
         <div class="goal-index-filter">
           <div class="goal_index-filter__box" id="easy-parent">
             <%= link_to difficulty: "easy", remote: true do %>
@@ -41,8 +40,6 @@
     </div>
     <div class="dashboard__cards-wrapper lg-padding">
       <div class="row" id="row__card-holder">
-        <% @goals = @goals.sort_by { |goal| goal.updated_at } %>
-        <% @goals.reverse! %>
         <%= render 'shared/goal-card' %>
       </div>
       <div class="col-xs-12">

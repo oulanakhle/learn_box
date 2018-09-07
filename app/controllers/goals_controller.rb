@@ -4,8 +4,8 @@ class GoalsController < ApplicationController
       @goals = Goal.where(difficulty: params[:difficulty])
       @difficulty = params[:difficulty]
     elsif params[:query].present?
-      raise
-      @goals = Goal.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE?"
+      @goals = Goal.where(sql_query, "%#{params[:query]}%")
     else
       @goals = Goal.all
     end

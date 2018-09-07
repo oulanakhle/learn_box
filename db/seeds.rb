@@ -45,8 +45,6 @@ task_array << Task.create!(name: "Learn and understand the grammar", completed: 
 task_array << Task.create!(name: "Practice and memorize them", completed: false, hours: rand(1..3), goal: Goal.last)
 task_array << Task.create!(name: "Learn to write, read and say basic words and phrases", completed: false, hours: rand(1..3), goal: Goal.last)
 task_array << Task.create!(name: "Learn chinease phonetic alphabet", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Give value to your shapes", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
 puts "Created Task #{Task.last.name}"
 
 goal_array << Goal.create!(name: "Write a book", description: "", difficulty: "medium", subject: Subject.find_by_name("arts"), user: User.last,  progress: rand(0..50), votes: rand(0..200))

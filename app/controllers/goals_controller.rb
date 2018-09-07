@@ -65,7 +65,7 @@ class GoalsController < ApplicationController
         new_task.goal = @my_goal
         new_task.save
       end
-      redirect_to dashboard_path()
+      redirect_to goals_path()
 
     else
       render 'new'

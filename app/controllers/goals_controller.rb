@@ -1,10 +1,12 @@
 class GoalsController < ApplicationController
   def index
-    if params[:query].present?
+    if params[:difficulty]
+      @goals = Goal.where(difficulty: params[:difficulty])
+      @difficulty = params[:difficulty]
+    elsif params[:query].present?
+      raise
       @goals = Goal.where("name ILIKE ?", "%#{params[:query]}%")
-    # if params[:difficulty]
-    #   @goals = Goal.where(difficulty: params[:difficulty])
-      else
+    else
       @goals = Goal.all
     end
     @subject = Subject.all
@@ -23,7 +25,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @tasks = Task.all
     @goals = Goal.all
-    @links= Link.all
+    @links = Link.all
 
   end
 

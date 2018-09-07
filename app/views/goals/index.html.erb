@@ -18,21 +18,21 @@
         </div>
         <h4 class="dashboard__h4 ">Select your difficulty</h4>
         <div class="goal-index-filter">
-          <div class="goal_index-filter__box">
-            <%= link_to difficulty: "easy" do %>
+          <div class="goal_index-filter__box" id="easy-parent">
+            <%= link_to difficulty: "easy", remote: true do %>
             <!-- #remote: true -->
               <div class="goal-index-filter__green ">
               </div>
             <% end %>
           </div>
 
-          <div class="goal_index-filter__box">
-            <%= link_to difficulty: "medium" do %> <!-- #remote: true -->
+          <div class="goal_index-filter__box" id="medium-parent">
+            <%= link_to difficulty: "medium", remote: true do %> <!-- #remote: true -->
               <div class="goal-index-filter__orange"></div>
             <% end %>
           </div>
-          <div class="goal_index-filter__box">
-            <%= link_to difficulty: "hard" do %> <!-- #remote: true -->
+          <div class="goal_index-filter__box" id="hard-parent">
+            <%= link_to difficulty: "hard", remote: true do %> <!-- #remote: true -->
               <div class="goal-index-filter__red"></div>
             <% end %>
           </div>
@@ -40,7 +40,9 @@
       </div>
     </div>
     <div class="dashboard__cards-wrapper lg-padding">
-      <div class="row">
+      <div class="row" id="row__card-holder">
+        <% @goals = @goals.sort_by { |goal| goal.updated_at } %>
+        <% @goals.reverse! %>
         <%= render 'shared/goal-card' %>
       </div>
       <div class="col-xs-12">

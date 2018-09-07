@@ -1,7 +1,4 @@
-console.log("Hello")
-
  <%if @difficulty %>
-   console.log("Inside <%= @difficulty %>")
   if ( typeof parentId === "undefined") {
     parentId = "<%= @difficulty %>-parent"
     filter = document.querySelector(`#${parentId}`);
@@ -10,16 +7,16 @@ console.log("Hello")
     filter = document.querySelector(`#${parentId}`);
   }
     filter.classList.toggle("goal-index-filter__active");
-   console.log(parentId)
-   console.log("<%= @goals.last.name %>")
 
   if ( typeof cardContainer === "undefined") {
     cardContainer = document.querySelector ("#row__card-holder")
+    console.log("its my first time")
+    let original = cardContainer.innerHTML
   } else {
     cardContainer = document.querySelector ("#row__card-holder")
+    console.log("its nth time")
   }
   cardContainer.innerHTML = "";
-
   var row = `<%= j render 'shared/goal-card' %>`
   cardContainer.insertAdjacentHTML("afterbegin", row )
 

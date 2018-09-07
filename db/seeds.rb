@@ -34,17 +34,17 @@ task_array = []
 
 puts "Creating goals"
 
-goal_array << Goal.create!(name: "Learning Chinease", description: "", difficulty: "hard", subject: Subject.find_by_name("arts"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+goal_array << Goal.create!(name: "Learning Chinese", description: "", difficulty: "hard", subject: Subject.find_by_name("arts"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
-task_array << Task.create!(name: "Learn how to draw", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw overlapping objects", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw shades and shadows", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw more complex objects (e.g. a house)", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "More complex three-dimensional objects", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw simple three-dimensional objects like cubes", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Draw objects shaped like a sphere", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Speak one of the most important languages in the world", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Become proficient in chinese", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Memorize about 10.000 different signs", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Learn and understand the grammar", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Practice and memorize them", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Learn to write, read and say basic words and phrases", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Learn chinease phonetic alphabet", completed: false, hours: rand(1..3), goal: Goal.last)
 task_array << Task.create!(name: "Give value to your shapes", completed: false, hours: rand(1..3), goal: Goal.last)
 task_array << Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
 puts "Created Task #{Task.last.name}"
@@ -53,13 +53,13 @@ goal_array << Goal.create!(name: "Write a book", description: "", difficulty: "m
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
-task_array << Task.create!(name: "Plan your novel (Set an overall and daily word count goal...)", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Start writing (start at the beginning of a month!)", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Write the outline for the first act", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Write the outline of the first half of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Finish the outline of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
-task_array << Task.create!(name: "Write the outline for the third act", completed: false, hours: rand(1..3), goal: Goal.last)
 task_array << Task.create!(name: "Start writing for real (adher to the goal you set yourself in the beginning)", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline for the third act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Finish the outline of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline of the first half of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline for the first act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Start writing (start at the beginning of a month!)", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Plan your novel (Set an overall and daily word count goal...)", completed: false, hours: rand(1..3), goal: Goal.last)
 dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
 drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
 youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
@@ -128,19 +128,19 @@ goal_array << Goal.create!(name: "Build a self-driving car", description: "", di
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
-todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
-todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
-todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
-todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+todo = Task.create(name: "Learn Machine learning in Python", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Complete udacity nanodegree", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "buy the hardware and GPU's", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Set it up on your car and watch a movie", completed: false, hours: rand(1..3), goal: Goal.last)
 
 goal_array << Goal.create!(name: "Practicing 0 inbox", description: "", difficulty: "easy", subject: Subject.find_by_name("self-improvement"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
-todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
-todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
-todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
-todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+todo = Task.create(name: "Archive all old email", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Unsubscribe for spam and classify emails in folders", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Reply to emails in the todo", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Clear your inbox at the end of the day", completed: false, hours: rand(1..3), goal: Goal.last)
 
 GOALS = [
     ["Work out daily", "Fitness", "medium"],

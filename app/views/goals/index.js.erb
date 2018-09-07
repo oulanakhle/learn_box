@@ -2,11 +2,14 @@
   if ( typeof parentId === "undefined") {
     parentId = "<%= @difficulty %>-parent"
   } else {
-    trigger.classList.toggle("goal-index-filter__active");
+    previousTrigger = document.querySelector(`#${parentId}`);
+    previousTrigger.classList.toggle("goal-index-filter__active");
     parentId = "<%= @difficulty %>-parent"
   }
     trigger = document.querySelector(`#${parentId}`);
     trigger.classList.toggle("goal-index-filter__active");
+
+  //TODO: Go back to showing everything once they click on disable filter (hard)
 
   if ( typeof cardContainer === "undefined") {
     cardContainer = document.querySelector ("#row__card-holder")

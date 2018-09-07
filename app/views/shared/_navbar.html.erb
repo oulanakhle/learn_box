@@ -10,6 +10,8 @@
     <% if user_signed_in? %>
       <!-- Links when logged in -->
       <!-- Avatar with dropdown menu -->
+      <a href=""><i class="fa fa-github"></i></a>
+      <%= link_to t(".search", default: "Coach me"), "https://m.me/230130457848782", class: "navbar-learnbox-item navbar-learnbox-link-sign-in" %>
       <%= link_to t(".search", default: "Search"),goals_path , class: "navbar-learnbox-item navbar-learnbox-link-sign-in" %>
       <%= link_to t(".dashboard", default: "My Goals"), dashboard_path, class: "navbar-learnbox-item navbar-learnbox-link-sign-in" %>
       <div class="navbar-learnbox-item">

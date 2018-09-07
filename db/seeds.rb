@@ -1,8 +1,3 @@
-
-#needs to be done in this order since booking holds foreign keys
-require 'open-uri'
-require 'faker'
-
 puts "Destrying Links"
 Link.destroy_all
 
@@ -22,121 +17,10 @@ CATEGORIES = [
               ["others"], ["arts"], ["health"], ["fitness"], ["money"], ["self-improvement"], ["intimacy"], ["social"], ["work"], ["study"]
             ]
 
-GOALS = [
-    ["Write a book", "Arts", "hard"],
-    ["Learn Javascript", "Work", "hard"],
-    ["Learn how to draw", "Arts", "medium"],
-    ["Solve the Rubik's Cube fast", "Self-Improvement", "hard"],
-    ["Landing a standing backflip", "Fitness", "hard"],
-    ["Learn a new language", "Study", "medium"],
-    ["Do 40 pull-ups", "Do 100 pushups", "Fitness", "medium"],
-    ["Run a marathon", "Fitness", "hard"],
-    ["Build a self-driving car", "Others", "hard"],
-    ["Wake-up at 4am", "Self-Improvement", "medium"],
-    ["Develop a Morning Routine", "Self-Improvement", "easy"],
-    ["Give up on Sugar", "Health", "easy"],
-    ["Read 30 books", "Self-Improvement", "easy"],
-    ["Read 1 hour daily", "Self-Improvement", "easy"],
-    ["Stop using curse words", "Self-Improvement", "easy"],
-    ["Walk 10.000 steps daily", "Fitness", "medium"],
-    ["Work out daily", "Fitness", "medium"],
-    ["Practice 0 inbox", "Self-Improvement", "easy"],
-    ["Keep a diary daily", "Self-Improvement", "medium"],
-    ["Give a compliment daily", "Social", "easy"],
-    ["Speak to someone new daily", "Social", "easy"],
-    ["Give up alcohol", "Health", "medium"],
-    ["Stop watching TV", "Others", "medium"],
-    ["Do a 20 minute meditation", "Self-Improvement", "easy"],
-    ["Don't lie", "Self-Improvement", "medium"],
-    ["Stop watching the news", "Social", "easy"],
-    ["Cook something new daily", "Health", "medium"],
-    ["Go for a 15 minute run", "Fitness", "easy"],
-    ["Do 50 situps daily", "Fitness", "easy"],
-    ["Learn a dance routine", "Study", "easy"],
-    ["Dance Salsa", "Social", "medium"],
-    ["Practice Jiu-Jitsu", "Fitness", "medium"],
-    ["Cycle to work", "Fitness", "easy"],
-    ["Knit a Scarf", "Others", "medium"],
-    ["Contribute to Wikipedia", "Work", "easy"],
-    ["Become a magician", "Study", "medium"],
-    ["Watch a film daily", "Others", "medium"],
-    ["Align your wardrobe", "Others", "medium"],
-    ["Write one idea per day", "Self-Improvement", "easy"],
-    ["Text one forgotten friend", "Social", "easy"],
-    ["Go on a date daily", "Intimacy", "hard"],
-    ["Give up social media", "Self-Improvement", "medium"],
-    ["Try being a vegetarian", "Health", "medium"],
-    ["Try being a vegan", "Health", "medium"],
-    ["Give up your phone", "Self-Improvement", "medium"],
-    ["Draw a comic book", "Arts", "medium"],
-    ["Do one sudoku daily", "Others", "easy"],
-    ["Learn how to code in Python", "Study", "medium"],
-    ["Become proficient in Photoshop", "Study", "medium"],
-    ["Dance daily", "Others", "easy"],
-    ["Become a youtuber", "Social", "medium"],
-    ["Quit masturbation", "Intimacy", "hard"],
-    ["Learn how to play the Violin", "Study", "medium"],
-    ["Learn how to surf", "Fitness", "medium"],
-    ["Learn how to snowboard", "Fitness", "medium"],
-    ["Learn how to skateboard", "Fitness", "medium"],
-    ["Learn how to play poker", "Money", "easy"],
-    ["Learn standup comedy", "Work", "medium"],
-    ["Learn how to juggle a ball", "Others", "easy"],
-    ["Do a triathlon", "Fitness", "hard"],
-    ["Learn Chinese", "Study", "hard"],
-    ["Learn how to Climb", "Fitness", "medium"]
-]
-
-TASKS = [
-  [
-    [name: "Write a book"],
-    ["Plan your novel (Set an overall and daily word count goal...)",
-      "Start writing (start at the beginning of a month!)",
-      "Write the outline for the first act",
-      "Write the outline of the first half of the second act",
-      "Finish the outline of the second act",
-      "Write the outline for the third act",
-      "Start writing for real (adher to the goal you set yourself in the beginning)"
-    ]
-  ],
-
-  [
-    [name: "Learn how to draw"],
-      ["Draw shapes",
-        "Give value to your shapes",
-        "Draw objects shaped like a sphere",
-        "Draw simple three-dimensional objects like cubes",
-        "More complex three-dimensional objects",
-        "Draw more complex objects (e.g. a house)",
-        "Draw shades and shadows",
-        "Draw overlapping objects"
-      ]
-  ],
-
-  [
-    [name: "Solve the Rubik's Cube fast"],
-      ["Familiarize with the concept of the rubics cube",
-        "Look up and practice one way to solve the cube",
-        "Look up and practice a different way",
-        "Practice solving the cube both ways, see what works best for you",
-        "Practice",
-        "Practice",
-        "Practice",
-        "Practice"
-      ]
-    ]
-  ]
-
-
+jan = User.create!(name: "jan", email: "jan@gmail.com", password: "123456")
 oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
-5.times do
-  a = User.create!(email: Faker::Internet.email, password: "123456")
-  puts "Created #{a.email}"
-  #name?? --> TODO: add later
-end
-
-nico = User.create!(name: "niko", email: "niko@gmail.com", password: "123456")
-ab = User.create!(name: "anon", email: "a@b.com", password: "123456")
+niko = User.create!(name: "niko", email: "niko@gmail.com", password: "123456")
+admin = User.create!(name: "anon", email: "a@b.com", password: "123456")
 
 puts "Creating Subjects"
 CATEGORIES.each do |element|
@@ -145,7 +29,134 @@ CATEGORIES.each do |element|
   puts "Created Category #{b.name}"
 end
 
+goal_array = []
+task_array = []
 
+puts "Creating goals"
+
+goal_array << Goal.create!(name: "Learning Chinease", description: "", difficulty: "hard", subject: Subject.find_by_name("arts"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+task_array << Task.create!(name: "Learn how to draw", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw overlapping objects", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw shades and shadows", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw more complex objects (e.g. a house)", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "More complex three-dimensional objects", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw simple three-dimensional objects like cubes", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw objects shaped like a sphere", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Give value to your shapes", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
+puts "Created Task #{Task.last.name}"
+
+goal_array << Goal.create!(name: "Write a book", description: "", difficulty: "medium", subject: Subject.find_by_name("arts"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+task_array << Task.create!(name: "Plan your novel (Set an overall and daily word count goal...)", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Start writing (start at the beginning of a month!)", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline for the first act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline of the first half of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Finish the outline of the second act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Write the outline for the third act", completed: false, hours: rand(1..3), goal: Goal.last)
+task_array << Task.create!(name: "Start writing for real (adher to the goal you set yourself in the beginning)", completed: false, hours: rand(1..3), goal: Goal.last)
+dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
+drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
+youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
+
+goal_array << Goal.create!(name: "Solve the Rubik's Cube fast", description: "", difficulty: "hard", subject: Subject.find_by_name("self-improvement"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Familiarize with the concept of the rubic's cube", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Look up and practice one way to solve the cube", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Look up and practice a different way", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Practice solving the cube both ways, see what works best for you", completed: false, hours: rand(1..3), goal: Goal.last)
+todo5 = Task.create!(name: "Practice", completed: false, hours: rand(1..3), goal: Goal.last)
+todo6 = Task.create!(name: "Practice", completed: false, hours: rand(1..3), goal: Goal.last)
+todo7 = Task.create!(name: "Practice", completed: false, hours: rand(1..3), goal: Goal.last)
+dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
+drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
+youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
+
+goal_array << Goal.create!(name: "Landing a standing backflip", description: "", difficulty: "medium", subject: Subject.find_by_name("fitness"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Get a trampoline", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Jump high enough to try it", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Land a front flip on the trampoline", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Practice the front flip on the trampoline", completed: false, hours: rand(1..3), goal: Goal.last)
+todo5 = Task.create!(name: "Land a backflip on the trampoline", completed: false, hours: rand(1..3), goal: Goal.last)
+todo6 = Task.create!(name: "Practice the back flip on the trampoline", completed: false, hours: rand(1..3), goal: Goal.last)
+todo7 = Task.create!(name: "Land a backflip into a swimming pool", completed: false, hours: rand(1..3), goal: Goal.last)
+dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
+drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
+youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
+
+goal_array << Goal.create!(name: "Learning a new language", description: "", difficulty: "medium", subject: Subject.find_by_name("study"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Memorize and practice some useful phrases", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Learn regular present tense conjugation", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Learn regular nouns", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Learn irregular present tense conjugations", completed: false, hours: rand(1..3), goal: Goal.last)
+todo5 = Task.create!(name: "Learn regular past tense conjugation", completed: false, hours: rand(1..3), goal: Goal.last)
+todo6 = Task.create!(name: "Learn irregular past tense conjugation", completed: false, hours: rand(1..3), goal: Goal.last)
+todo7 = Task.create!(name: "Learn regular adjectives", completed: false, hours: rand(1..3), goal: Goal.last)
+dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
+drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
+youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
+
+goal_array << Goal.create!(name: "Running a marathon", description: "", difficulty: "hard", subject: Subject.find_by_name("fitness"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+todo5 = Task.create!(name: "Alternate rest days with swimming or cycling", completed: false, hours: rand(1..3), goal: Goal.last)
+todo6 = Task.create!(name: "Do a gel bath after every run and use a foam to massage your legs", completed: false, hours: rand(1..3), goal: Goal.last)
+todo7 = Task.create!(name: "Set a crazy soundtrack and.... RUN!!!", completed: false, hours: rand(1..3), goal: Goal.last)
+dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
+drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
+youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)
+
+goal_array << Goal.create!(name: "Build a self-driving car", description: "", difficulty: "hard", subject: Subject.find_by_name("study"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+
+goal_array << Goal.create!(name: "Practicing 0 inbox", description: "", difficulty: "easy", subject: Subject.find_by_name("self-improvement"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
+puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
+puts
+
+todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+
+GOALS = [
+    ["Work out daily", "Fitness", "medium"],
+    ["Stop watching TV", "Others", "medium"],
+    ["Doing a 20 minute meditation", "Self-Improvement", "easy"],
+    ["Doing 50 situps daily", "Fitness", "easy"],
+    ["Learn a dance routine", "Study", "easy"],
+    ["Contribute to Wikipedia", "Work", "easy"],
+    ["Learning magic", "Study", "medium"],
+    ["Become a vegetarian", "Health", "medium"],
+    ["Try being a vegan", "Health", "medium"],
+    ["Draw a comic book", "Arts", "medium"],
+    ["Become proficient in Photoshop", "Study", "medium"],
+    ["Become a youtuber", "Social", "medium"],
+    ["Learn how to climb", "Fitness", "hard"]
+]
 
 puts "Creating goals"
 
@@ -160,19 +171,18 @@ GOALS.each do |goal|
   puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
   puts
 
-  todo = Task.create!(name: "Draw portrait of myself", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo2 = Task.create!(name: "Draw overlapping objects", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo3 = Task.create!(name: "Draw shades and shadows", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo4 = Task.create!(name: "Draw more complex objects (e.g. a house)", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo5 = Task.create!(name: "More complex three-dimensional objects", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo6 = Task.create!(name: "Draw simple three-dimensional objects like cubes", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo7 = Task.create!(name: "Draw objects shaped like a sphere", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo8 = Task.create!(name: "Give value to your shapes", completed: false, hours: rand(1..3), goal: Goal.last)
-  todo9 = Task.create!(name: "Draw shapes", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo = Task.create!(name: "TODO", completed: false, hours: rand(5..7), goal: Goal.last)
+  todo2 = Task.create!(name: "TODO", completed: false, hours: rand(2..6), goal: Goal.last)
+  todo3 = Task.create!(name: "TODO", completed: false, hours: rand(0..8), goal: Goal.last)
+  todo4 = Task.create!(name: "TODO", completed: false, hours: rand(1..4), goal: Goal.last)
+  todo5 = Task.create!(name: "TODO", completed: false, hours: rand(0..3), goal: Goal.last)
+  todo6 = Task.create!(name: "TODO", completed: false, hours: rand(1..9), goal: Goal.last)
+  todo7 = Task.create!(name: "TODO", completed: false, hours: rand(0..5), goal: Goal.last)
+  todo8 = Task.create!(name: "TODO", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo9 = Task.create!(name: "TODO", completed: false, hours: rand(1..3), goal: Goal.last)
   puts "Created Task #{todo.name} for #{todo.goal.name} "
 
 
   link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
   puts "Created link #{link.url} for #{link.goal.name} "
 end
-

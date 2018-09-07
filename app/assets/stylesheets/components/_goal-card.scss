@@ -110,7 +110,8 @@
 }
 
 .product-controls a {
-  color: #FFA617 !important
+  color: #FFA617 !important;
+  text-decoration: none;
 }
 
 
@@ -145,21 +146,8 @@
     color: black;
 }
 
-/* visited link */
-.product-body:visited  p,h3,h6 {
-    text-decoration: none;
-    color: black;
+/* Hover effects */
+.product:hover {
+  background: white;
+  cursor: pointer;
 }
-
-/* mouse over link */
-.product-body:hover  p,h3,h6 {
-    text-decoration: none;
-    color: black;
-}
-
-/* selected link */
-.product-body:active  p,h3,h6 {
-    text-decoration: none;
-    color: black;
-}
-

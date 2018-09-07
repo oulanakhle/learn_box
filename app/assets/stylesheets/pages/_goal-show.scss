@@ -81,3 +81,169 @@
     text-decoration: none;
     color: #ffffff;
 }
+
+
+.youtube-container{
+position: relative;
+width: 280px;
+height: 98px;
+margin-bottom: 50px;
+}
+
+.youtube-card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  background:   #bf0000;
+}
+
+.youtube-card:hover{
+  transform: rotateY(180deg);
+}
+.youtube-front{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  backface-visibility: hidden;
+  background:   #bf0000;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.youtube-back{
+  font-family: lato;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height:100%;
+  font-size: 32px;
+  text-align: center;
+  backface-visibility: hidden;
+  background:   #bf0000;
+  color: white;
+  transform: rotateY(180deg);
+
+
+}
+
+.link-container{
+  display: flex;
+  justify-content: space-between;
+  font-family: Lato;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+
+}
+
+
+.drive-container{
+position: relative;
+width: 280px;
+height: 98px;
+margin-bottom: 50px;
+}
+
+.drive-card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  background:   #bf0000;
+}
+
+.drive-card:hover{
+  transform: rotateY(180deg);
+}
+.drive-front{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  backface-visibility: hidden;
+  background:   #FFB00F;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.drive-back{
+  font-family: lato;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height:100%;
+  font-size: 32px;
+  text-align: center;
+  backface-visibility: hidden;
+  background:   #FFB00F;
+  color: white;
+  transform: rotateY(180deg);
+
+
+}
+
+
+.drop-container{
+position: relative;
+width: 280px;
+height: 98px;
+margin-bottom: 50px;
+}
+
+.drop-card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  background:   #4200FF;
+}
+
+.drop-card:hover{
+  transform: rotateY(180deg);
+}
+.drop-front{
+  position: absolute;
+  width: 100%;
+  height:100%;
+  backface-visibility: hidden;
+  background:   #4200FF;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.drop-back{
+  font-family: lato;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height:100%;
+  font-size: 32px;
+  text-align: center;
+  backface-visibility: hidden;
+  background:   #4200FF;
+  color: white;
+  transform: rotateY(180deg);
+
+
+}

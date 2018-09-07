@@ -28,6 +28,26 @@
              <%= link_to image_tag("delete.svg"), goal_task_path(@goal, task), method: "delete",class:"task-card-delete" %>
         </div>
       <% end %>
+      <div class="link-container">
+        <div class="youtube-container">
+        <div class="youtube-card">
+          <div class="youtube-front"><i class="fab fa-youtube"></i></div>
+          <div class="youtube-back"><%= @links.last.name %></div>
+          </div>
+        </div>
+        <div class="drive-container">
+        <div class="drive-card">
+          <div class="drive-front"><i class="fab fa-google-drive"></i></div>
+          <div class="drive-back"><%= @links.last.name %></div>
+          </div>
+        </div>
+        <div class="drop-container">
+        <div class="drop-card">
+          <div class="drop-front"><i class="fab fa-dropbox"></i></div>
+          <div class="drop-back"><%= @links.last.name %></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

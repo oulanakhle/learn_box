@@ -111,13 +111,13 @@ goal_array << Goal.create!(name: "Running a marathon", description: "", difficul
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
-todo7 = Task.create!(name: "Set a crazy soundtrack and.... RUN!!!", completed: false, hours: rand(1..3), goal: Goal.last)
-todo6 = Task.create!(name: "Do a gel bath after every run and use a foam to massage your legs", completed: false, hours: rand(1..3), goal: Goal.last)
-todo5 = Task.create!(name: "Alternate rest days with swimming or cycling", completed: false, hours: rand(1..3), goal: Goal.last)
-todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
-todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
-todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
 todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+todo5 = Task.create!(name: "Alternate rest days with swimming or cycling", completed: false, hours: rand(1..3), goal: Goal.last)
+todo6 = Task.create!(name: "Do a gel bath after every run and use a foam to massage your legs", completed: false, hours: rand(1..3), goal: Goal.last)
+todo7 = Task.create!(name: "Set a crazy soundtrack and.... RUN!!!", completed: false, hours: rand(1..3), goal: Goal.last)
 dropbox = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Books", description: "Hacking learning", goal: Goal.last)
 drive = Link.create!(url: "https://ocw.mit.edu/courses/nuclear-engineering/22-15-essential-numerical-methods-fall-2014/lecture-notes/", name: "Course Notes", description: "Cool notes", goal: Goal.last)
 youtube = Link.create!(url: "https://www.youtube.com/watch?v=UNP03fDSj1U", name: "Learn Faster", description: "Interesting video", goal: Goal.last)

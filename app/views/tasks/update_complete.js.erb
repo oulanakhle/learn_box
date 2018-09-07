@@ -1,10 +1,6 @@
-console.log("testing")
-// tenim la task id
-
 <% if @message %>
   taskId = "taskId" + <%= @task_id%>;
   // selection amb task id
-  console.log("00000000000000")
   console.log(taskId)
   if ( typeof task === "undefined") {
     task = document.querySelector(`#${taskId}`);

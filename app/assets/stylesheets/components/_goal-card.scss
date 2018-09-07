@@ -110,12 +110,13 @@
 }
 
 .product-controls a {
-  color: #FFA617 !important
+  color: #FFA617 !important;
+  text-decoration: none;
 }
 
 
 /* Hover effects */
-.product {
+.product:hover {
   background: #f7f7fa;
   cursor: pointer;
 }
@@ -141,24 +142,6 @@
 }
 
 .product-body:link p,h3,h6 {
-    text-decoration: none;
-    color: black;
-}
-
-/* visited link */
-.product-body:visited  p,h3,h6 {
-    text-decoration: none;
-    color: black;
-}
-
-/* mouse over link */
-.product-body:hover  p,h3,h6 {
-    text-decoration: none;
-    color: black;
-}
-
-/* selected link */
-.product-body:active  p,h3,h6 {
     text-decoration: none;
     color: black;
 }

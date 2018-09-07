@@ -4,8 +4,8 @@ class GoalsController < ApplicationController
       @goals = Goal.where(difficulty: params[:difficulty])
       @difficulty = params[:difficulty]
     elsif params[:query].present?
-      raise
-      @goals = Goal.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE?"
+      @goals = Goal.where(sql_query, "%#{params[:query]}%")
     else
       @goals = Goal.all
     end
@@ -33,6 +33,7 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
     @tasks = Task.all
     @goals = Goal.all
+    @links = Link.all
   end
 
   def new
@@ -65,7 +66,7 @@ class GoalsController < ApplicationController
         new_task.goal = @my_goal
         new_task.save
       end
-      redirect_to dashboard_path()
+      redirect_to goals_path()
 
     else
       render 'new'

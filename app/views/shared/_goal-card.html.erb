@@ -1,3 +1,5 @@
+<% @goals = @goals.sort_by { |goal| goal.votes} %>
+<% @goals.reverse! %>
 <% @goals.each do |goal| %>
   <div class="col-xs-12 col-sm-6">
     <!-- if I link to do it fucks up the card -->

@@ -116,7 +116,7 @@
 
 
 /* Hover effects */
-.product {
+.product:hover {
   background: #f7f7fa;
   cursor: pointer;
 }
@@ -144,10 +144,4 @@
 .product-body:link p,h3,h6 {
     text-decoration: none;
     color: black;
-}
-
-/* Hover effects */
-.product:hover {
-  background: white;
-  cursor: pointer;
 }

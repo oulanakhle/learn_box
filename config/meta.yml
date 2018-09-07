@@ -1,0 +1,5 @@
+meta_product_name: "Learnbox"
+meta_title: "Learn anything, fast!"
+meta_description: "Challenge yourself to learn during our monthly project"
+meta_image: "sign-in.png"                       # should exist in `app/assets/images/`
+twitter_account: "@jcllobet"   # required for Twitter Cards

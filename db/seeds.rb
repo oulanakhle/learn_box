@@ -17,33 +17,6 @@ CATEGORIES = [
               ["others"], ["arts"], ["health"], ["fitness"], ["money"], ["self-improvement"], ["intimacy"], ["social"], ["work"], ["study"]
             ]
 
-GOALS = [
-    ["Write a book", "Arts", "hard"],
-    ["Learn how to draw", "Arts", "medium"],
-    ["Solve the Rubik's Cube fast", "Self-Improvement", "hard"],
-    ["Landing a standing backflip", "Fitness", "hard"],
-    ["Learn a new language", "Study", "medium"],
-    ["Run a marathon", "Fitness", "hard"],
-    ["Build a self-driving car", "Others", "hard"],
-    ["Work out daily", "Fitness", "medium"],
-    ["Practice 0 inbox", "Self-Improvement", "easy"],
-    ["Stop watching TV", "Others", "medium"],
-    ["Do a 20 minute meditation", "Self-Improvement", "easy"],
-    ["Don't lie", "Self-Improvement", "medium"],
-    ["Do 50 situps daily", "Fitness", "easy"],
-    ["Learn a dance routine", "Study", "easy"],
-    ["Contribute to Wikipedia", "Work", "easy"],
-    ["Learn magic", "Study", "medium"],
-    ["Become a vegetarian", "Health", "medium"],
-    ["Try being a vegan", "Health", "medium"],
-    ["Draw a comic book", "Arts", "medium"],
-    ["Become proficient in Photoshop", "Study", "medium"],
-    ["Become a youtuber", "Social", "medium"],
-    ["Do a triathlon", "Fitness", "hard"],
-    ["Learn Chinese", "Study", "hard"],
-    ["Learn how to climb", "Fitness", "hard"]
-]
-
 jan = User.create!(name: "jan", email: "jan@gmail.com", password: "123456")
 oula = User.create!(name: "oula", email: "oulanakhle@gmail.com", password: "123456")
 niko = User.create!(name: "niko", email: "niko@gmail.com", password: "123456")
@@ -155,9 +128,19 @@ goal_array << Goal.create!(name: "Build a self-driving car", description: "", di
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
 
+todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
+
 goal_array << Goal.create!(name: "Practicing 0 inbox", description: "", difficulty: "easy", subject: Subject.find_by_name("self-improvement"), user: User.last,  progress: rand(0..50), votes: rand(0..200))
 puts "The goal is #{Goal.last.name}, with #{Goal.last.difficulty} and belonging to category #{Goal.last.subject.name} "
 puts
+
+todo = Task.create(name: "Analyze overall fitness status", completed: false, hours: rand(1..3), goal: Goal.last)
+todo2 = Task.create(name: "Figure out why you actually want to do it under a month", completed: false, hours: rand(1..3), goal: Goal.last)
+todo3 = Task.create(name: "Run between 10-15 km 4 days a week", completed: false, hours: rand(1..3), goal: Goal.last)
+todo4 = Task.create!(name: "Long distance running on sundays", completed: false, hours: rand(1..3), goal: Goal.last)
 
 GOALS = [
     ["Work out daily", "Fitness", "medium"],
@@ -174,3 +157,32 @@ GOALS = [
     ["Become a youtuber", "Social", "medium"],
     ["Learn how to climb", "Fitness", "hard"]
 ]
+
+puts "Creating goals"
+
+GOALS.each do |goal|
+  if !Subject.find_by_name(goal[1]).nil?
+    subject = Subject.find_by_name(goal[1])
+  else
+    subject = Subject.find_by_name("others")
+  end
+
+  c = Goal.create!(name: goal[0], description: "", difficulty: goal[2], subject: subject, user: User.last,  progress: rand(0..50), votes: rand(0..200))
+  puts "The goal is #{c.name}, with #{c.difficulty} and belonging to category #{c.subject.name} "
+  puts
+
+  todo = Task.create!(name: "TODO", completed: false, hours: rand(5..7), goal: Goal.last)
+  todo2 = Task.create!(name: "TODO", completed: false, hours: rand(2..6), goal: Goal.last)
+  todo3 = Task.create!(name: "TODO", completed: false, hours: rand(0..8), goal: Goal.last)
+  todo4 = Task.create!(name: "TODO", completed: false, hours: rand(1..4), goal: Goal.last)
+  todo5 = Task.create!(name: "TODO", completed: false, hours: rand(0..3), goal: Goal.last)
+  todo6 = Task.create!(name: "TODO", completed: false, hours: rand(1..9), goal: Goal.last)
+  todo7 = Task.create!(name: "TODO", completed: false, hours: rand(0..5), goal: Goal.last)
+  todo8 = Task.create!(name: "TODO", completed: false, hours: rand(1..3), goal: Goal.last)
+  todo9 = Task.create!(name: "TODO", completed: false, hours: rand(1..3), goal: Goal.last)
+  puts "Created Task #{todo.name} for #{todo.goal.name} "
+
+
+  link = Link.create!(url: "https://www.youtube.com/watch?v=DLzxrzFCyOs", name: "Click me", description: "Interesting video", goal: Goal.last)
+  puts "Created link #{link.url} for #{link.goal.name} "
+end

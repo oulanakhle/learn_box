@@ -1,17 +1,18 @@
  <%if @difficulty %>
   if ( typeof parentId === "undefined") {
     parentId = "<%= @difficulty %>-parent"
-    filter = document.querySelector(`#${parentId}`);
   } else {
+    trigger.classList.toggle("goal-index-filter__active");
     parentId = "<%= @difficulty %>-parent"
-    filter = document.querySelector(`#${parentId}`);
   }
-    filter.classList.toggle("goal-index-filter__active");
+    trigger = document.querySelector(`#${parentId}`);
+    trigger.classList.toggle("goal-index-filter__active");
 
   if ( typeof cardContainer === "undefined") {
     cardContainer = document.querySelector ("#row__card-holder")
     console.log("its my first time")
     let original = cardContainer.innerHTML
+    console.log(`${original}`)
   } else {
     cardContainer = document.querySelector ("#row__card-holder")
     console.log("its nth time")
@@ -19,6 +20,7 @@
   cardContainer.innerHTML = "";
   var row = `<%= j render 'shared/goal-card' %>`
   cardContainer.insertAdjacentHTML("afterbegin", row )
+
 
  <%else %>
    console.log("You suck at coding")
